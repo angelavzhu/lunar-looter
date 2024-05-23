@@ -10,20 +10,21 @@ public class EnemyMovementTest : MonoBehaviour
     public Transform targetPos;
     public float speed;
 
-
+// Sets target position to firstPos first
     void Awake()
     {
         targetPos = firstPos;
     }
 
 
-    // Update is called once per frame
+
     void Update()
     {
         Move();
     }
 
 
+// Enemy moves back and forth from one position to another
     private void Move(){
         if(Vector2.Distance(transform.position, firstPos.position) < 0.01f){
             targetPos = secondPos;
