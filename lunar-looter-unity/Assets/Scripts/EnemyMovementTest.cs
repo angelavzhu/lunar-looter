@@ -8,8 +8,8 @@ public class EnemyMovementTest : MonoBehaviour
     public Transform firstPos;
     public Transform secondPos;
     public Transform targetPos;
-    [SerializeField] private float distance;
     public float speed;
+
 
     void Awake()
     {
