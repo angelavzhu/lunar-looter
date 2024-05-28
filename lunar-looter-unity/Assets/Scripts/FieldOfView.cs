@@ -37,6 +37,7 @@ public class FieldOfView : MonoBehaviour
 
     //called every frame: AFTER player update is called
     void LateUpdate(){ 
+        // NOTE: FOV is blocked by objects in the layer "walls", must change this in editor. 
         CreateFOV();
     }
 

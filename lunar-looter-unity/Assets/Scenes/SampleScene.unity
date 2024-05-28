@@ -257,13 +257,8 @@ GameObject:
   - component: {fileID: 138008926}
   - component: {fileID: 138008927}
   m_Layer: 0
-<<<<<<< HEAD
   m_Name: Player
   m_TagString: Untagged
-=======
-  m_Name: Circle
-  m_TagString: Player
->>>>>>> origin/enemy-vision-cones
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,10 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-<<<<<<< HEAD
   fov: {fileID: 474083737}
-=======
->>>>>>> origin/enemy-vision-cones
 --- !u!58 &138008927
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -414,8 +406,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
-<<<<<<< HEAD
-=======
 --- !u!1 &318355670
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 318355671}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TestWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +439,6 @@ Transform:
   - {fileID: 996834173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/enemy-vision-cones
 --- !u!1 &354690069
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +838,7 @@ GameObject:
   - component: {fileID: 996834173}
   - component: {fileID: 996834172}
   - component: {fileID: 996834171}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlockWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +968,7 @@ GameObject:
   - component: {fileID: 1309949868}
   - component: {fileID: 1309949867}
   - component: {fileID: 1309949869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,15 +1287,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-<<<<<<< HEAD
   - {fileID: 138008925}
   - {fileID: 474083738}
-=======
->>>>>>> origin/enemy-vision-cones
   - {fileID: 58967151}
   - {fileID: 354690070}
   - {fileID: 1386100867}
-  - {fileID: 138008925}
   - {fileID: 318355671}
   - {fileID: 658033154}
   - {fileID: 1790959440}
