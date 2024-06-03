@@ -1201,6 +1201,7 @@ MonoBehaviour:
   secondPos: {fileID: 1386100867}
   targetPos: {fileID: 354690070}
   speed: 5
+  aimDirection: {x: 0, y: 7}
   fovWide: {fileID: 1136019594}
   fovNarrow: {fileID: 447014132}
 --- !u!1 &1309949866
