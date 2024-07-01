@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -17,19 +19,22 @@ public class PlayerControl : MonoBehaviour
     // reference to the FOV
     [SerializeField] private FieldOfView fov;
 
+     Animator playerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         // aimDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        x = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        y = Input.GetAxisRaw("Vertical") * moveSpeed;
-        body.velocity = new Vector2(x,y);
+        
+        Move();
+        Animate();
 
         SetAimDirection();
         fov.SetAim(aimDirection);
@@ -41,5 +46,32 @@ public class PlayerControl : MonoBehaviour
         aimDirection = new Vector2(mouse.x - transform.position.x, 
                                     mouse.y - transform.position.y);
 
+    }
+
+    private void Move(){
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        if(horizontal == 0 && vertical == 0){
+            body.velocity = new Vector2(0,0);
+            return;
+        }
+
+        x =  horizontal * moveSpeed;
+        y =  vertical * moveSpeed;
+        
+        body.velocity = new Vector2(x,y);
+    }
+
+    private void Animate(){
+        if(body.velocity != Vector2.zero){
+            playerAnimator.SetBool("Walk", true);
+            playerAnimator.SetFloat("MovementX", x);
+            playerAnimator.SetFloat("MovementY", y);
+        }
+        else{
+            playerAnimator.SetBool("Walk", false);
+        }
+        
     }
 }

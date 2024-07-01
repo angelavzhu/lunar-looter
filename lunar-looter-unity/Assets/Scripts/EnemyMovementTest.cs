@@ -18,11 +18,16 @@ public class EnemyMovementTest : MonoBehaviour
     [SerializeField] private float speed;
 
     // direction enemy viewcones point towards
-    [SerializeField] private Vector2 aimDirection;
+    private Vector2 aimDirection;
 
     [SerializeField] private EnemyFieldOfView fovWide;
     [SerializeField] private EnemyFieldOfView fovNarrow;
 
+
+    void Start()
+    {
+        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+    }
 
     // Updates direction of vision cones and vision cone origins each origin
     void LateUpdate()
@@ -41,11 +46,14 @@ public class EnemyMovementTest : MonoBehaviour
     private void Move(){
         if(Vector2.Distance(transform.position, firstPos.position) < 0.01f){
             targetPos = secondPos;
+            //aimDirection = new Vector2(targetPos.position.x, 0);
         }
         if(Vector2.Distance(transform.position, secondPos.position) < 0.01f){
             targetPos = firstPos;
+            //aimDirection = new Vector2(targetPos.position.x, 0);
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed*Time.deltaTime);
-        aimDirection = new Vector2(0, targetPos.position.y);
+        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+        
     }
 }
