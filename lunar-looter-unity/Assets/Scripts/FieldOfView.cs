@@ -26,7 +26,6 @@ public class FieldOfView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("test");
         mesh = new Mesh();
         fov = 80f;
         //origin of sight cone

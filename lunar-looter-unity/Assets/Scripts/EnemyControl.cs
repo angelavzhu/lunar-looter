@@ -1,15 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EnemyMovementTest : MonoBehaviour
+public class EnemyControl : MonoBehaviour
 {
     // starting point enemy moves to
     public Transform firstPos;
 
     // next point enemy moves to
     public Transform secondPos;
+
+    private Boolean isChasing;
 
     // point enemy currently moves towards
     [SerializeField] private Transform targetPos;
@@ -19,6 +22,7 @@ public class EnemyMovementTest : MonoBehaviour
 
     // direction enemy viewcones point towards
     private Vector2 aimDirection;
+    
 
     [SerializeField] private EnemyFieldOfView fovWide;
     [SerializeField] private EnemyFieldOfView fovNarrow;
@@ -27,6 +31,7 @@ public class EnemyMovementTest : MonoBehaviour
     void Start()
     {
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+        isChasing = false;
     }
 
     // Updates direction of vision cones and vision cone origins each origin
@@ -55,5 +60,12 @@ public class EnemyMovementTest : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed*Time.deltaTime);
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
         
+    }
+
+    // Handles when the player is seen by the enemy
+    public void seePlayer(GameObject player){
+        isChasing = true;
+        transform.position = player.transform.position;
+        Debug.Log("chase");
     }
 }

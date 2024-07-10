@@ -25,11 +25,13 @@ public class EnemyFieldOfView : MonoBehaviour
     // layermask for all the objects which should block the FOV (walls)
     [SerializeField] private LayerMask layermask;
 
+    // reference to the enemy
+    [SerializeField] private EnemyControl enemy;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("test");
         mesh = new Mesh();
         //origin of sight cone
         origin = Vector3.zero;
@@ -77,7 +79,13 @@ public class EnemyFieldOfView : MonoBehaviour
             if(ray.collider == null){
                 //nothing blocking the FOV
                 vertex = origin + AngleToVector(angle) * viewDistance;
-            } else {
+            } else if (ray.rigidbody != null) {
+                //player enters vision
+                Debug.Log("see player");
+                enemy.seePlayer(GameObject.FindGameObjectsWithTag("Player")[0]);
+                vertex = ray.point;
+            }
+            else {
                 //something blocking the FOV: set vertex to where it was blocked
                 vertex = ray.point;
             }
