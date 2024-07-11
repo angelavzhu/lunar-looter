@@ -82,7 +82,7 @@ public class EnemyFieldOfView : MonoBehaviour
             } else if (ray.rigidbody == null) {
                 //player enters vision
                 Debug.Log("see player");
-                enemy.seePlayer(GameObject.FindGameObjectsWithTag("Player")[0]);
+                enemy.seePlayer();
                 vertex = ray.point;
             }
             else {

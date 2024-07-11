@@ -15,8 +15,8 @@ public class EnemyControl : MonoBehaviour
     //whether the enemy is chasing the player
     private Boolean isChasing;
 
-    //timer for how long the player is outside of the FOV range
-    private int timer;
+    // the player (for chasing)
+    private Transform Player;
 
     // point enemy currently moves towards
     [SerializeField] private Transform targetPos;
@@ -31,11 +31,11 @@ public class EnemyControl : MonoBehaviour
     [SerializeField] private EnemyFieldOfView fovWide;
     [SerializeField] private EnemyFieldOfView fovNarrow;
 
-
     void Start()
     {
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
         isChasing = false;
+        Player = GameObject.FindWithTag("Player").transform;
     }
 
     // Updates direction of vision cones and vision cone origins each origin
@@ -46,7 +46,7 @@ public class EnemyControl : MonoBehaviour
 
         fovNarrow.SetAim(aimDirection);
         fovNarrow.SetOrigin(transform.position);
-        Move();
+        if(!isChasing){ Move();}
     }
 
 
@@ -61,16 +61,20 @@ public class EnemyControl : MonoBehaviour
             targetPos = firstPos;
             //aimDirection = new Vector2(targetPos.position.x, 0);
         }
-        transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed*Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
         
     }
 
     // Handles when the player is seen by the enemy
-    public void seePlayer(GameObject player){
+    public void seePlayer(){
         isChasing = true;
-        Vector2 chaseDir = player.transform.position;
-        transform.position = Vector2.Lerp(transform.position, chaseDir, 1);
+        if (Vector3.Distance(transform.position, Player.position) >= 1)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
+            aimDirection = new Vector2(Player.position.x - transform.position.x, Player.position.y - transform.position.y);
+        }
+
         Debug.Log("chase");
     }
 }
