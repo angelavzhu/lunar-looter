@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -14,7 +15,7 @@ public class PlayerControl : MonoBehaviour
     // the rigidbody of the player
     Rigidbody2D body;
 
-    Vector2 aimDirection;
+    UnityEngine.Vector2 aimDirection;
 
     // reference to the FOV
     [SerializeField] private FieldOfView fov;
@@ -25,46 +26,47 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        // aimDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         Move();
         Animate();
-
         SetAimDirection();
         fov.SetAim(aimDirection);
         fov.SetOrigin(transform.position);
     }
 
     private void SetAimDirection(){
-        Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        aimDirection = new Vector2(mouse.x - transform.position.x, 
+        UnityEngine.Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        aimDirection = new UnityEngine.Vector2(mouse.x - transform.position.x, 
                                     mouse.y - transform.position.y);
 
     }
 
+    
+
     private void Move(){
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        // if(!collide) {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
 
-        if(horizontal == 0 && vertical == 0){
-            body.velocity = new Vector2(0,0);
-            return;
-        }
+            if(horizontal == 0 && vertical == 0){
+                body.velocity = new UnityEngine.Vector2(0,0);
+                return;
+            }
 
-        x =  horizontal * moveSpeed;
-        y =  vertical * moveSpeed;
-        
-        body.velocity = new Vector2(x,y);
+            x =  horizontal * moveSpeed;
+            y =  vertical * moveSpeed;
+            
+            body.velocity = new UnityEngine.Vector2(x,y);
+        // }
     }
 
     private void Animate(){
-        if(body.velocity != Vector2.zero){
+        if(body.velocity != UnityEngine.Vector2.zero){
             playerAnimator.SetBool("Walk", true);
             playerAnimator.SetFloat("MovementX", x);
             playerAnimator.SetFloat("MovementY", y);
