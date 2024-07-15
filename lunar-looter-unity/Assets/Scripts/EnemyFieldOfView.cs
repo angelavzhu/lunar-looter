@@ -71,24 +71,28 @@ public class EnemyFieldOfView : MonoBehaviour
         //vector 0 is a horizontal line
         //forms 2 triangles
         int triangleIndex = 0;
+        //need to see for every vertex if it sees the player: if all don't see, then false
+        Boolean seePlayer = false;
+
         for(int i = 1; i <= rayCount + 1; i++){
             //instead of a set position, each vertex should be raycasted
             RaycastHit2D ray = Physics2D.Raycast(origin, AngleToVector(angle), viewDistance, layermask);
-            Vector3 vertex;
+            Collider2D hit = ray.collider;
+            
+            //assume nothing blocking FOV
+            Vector3 vertex = origin + AngleToVector(angle) * viewDistance;
 
-            if(ray.collider == null){
-                //nothing blocking the FOV
-                vertex = origin + AngleToVector(angle) * viewDistance;
-            } else if (ray.rigidbody != null) {
-                //player enters vision
-                Debug.Log("see player");
-                enemy.seePlayer(GameObject.FindGameObjectsWithTag("Player")[0]);
-                vertex = ray.point;
+            if(hit != null){
+                 //something blocking the FOV: set vertex to where it was blocked
+                if (hit.tag == "Player") {
+                    //player enters vision
+                    seePlayer = true;
+                } else {
+                    // see a wall: stop sight cone at wall
+                    vertex = ray.point;
+                }
             }
-            else {
-                //something blocking the FOV: set vertex to where it was blocked
-                vertex = ray.point;
-            }
+           
             vertices[i] = vertex;
 
             if(i-1 > 0){
@@ -99,11 +103,25 @@ public class EnemyFieldOfView : MonoBehaviour
             }
         angle -= angleIncrease;
         }
+        
+        //process whether enemy saw the player
+        enemy.seePlayer(seePlayer);
+
 
         mesh.vertices = vertices;
         mesh.triangles = triangles;
 
         mesh.RecalculateBounds();        
+    }
+
+    // Sets the origin of the FOV
+    public void SetOrigin(Vector3 origin) {
+        this.origin = origin;
+    }
+
+    // Sets the angle for the FOV
+    public void SetAim(Vector2 direction){
+        startingAngle = VectorToAngle(direction) + (fov / 2f);
     }
 
     // Converts an angle to a Vector3
@@ -121,16 +139,5 @@ public class EnemyFieldOfView : MonoBehaviour
         
         return angle;
     }
-
-    // Sets the origin of the FOV
-    public void SetOrigin(Vector3 origin) {
-        this.origin = origin;
-    }
-
-    // Sets the angle for the FOV
-    public void SetAim(Vector2 direction){
-        startingAngle = VectorToAngle(direction) + (fov / 2f);
-    }
-
 
 }
