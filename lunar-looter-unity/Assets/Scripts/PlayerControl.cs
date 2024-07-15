@@ -63,6 +63,14 @@ public class PlayerControl : MonoBehaviour
         body.velocity = new Vector2(x,y);
     }
 
+    // Shows death/restart screen if player hits enemy
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("Enemy")){
+
+        }
+    }
+
+    // Player animation
     private void Animate(){
         if(body.velocity != Vector2.zero){
             playerAnimator.SetBool("Walk", true);
