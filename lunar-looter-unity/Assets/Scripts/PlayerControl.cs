@@ -19,7 +19,10 @@ public class PlayerControl : MonoBehaviour
     // reference to the FOV
     [SerializeField] private FieldOfView fov;
 
-     Animator playerAnimator;
+    // animation controller object
+    Animator playerAnimator;
+
+    public GameObject restartScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +69,9 @@ public class PlayerControl : MonoBehaviour
     // Shows death/restart screen if player hits enemy
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Enemy")){
-
+            TimeController.instance.EndTimer();
+            restartScreen.SetActive(true);
+            body.gameObject.GetComponent<PlayerControl>().enabled = false;
         }
     }
 

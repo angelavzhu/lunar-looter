@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   fov: {fileID: 0}
+  restartScreen: {fileID: 0}
 --- !u!95 &5750665486758976427
 Animator:
   serializedVersion: 5
