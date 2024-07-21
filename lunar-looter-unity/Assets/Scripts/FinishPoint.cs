@@ -12,7 +12,6 @@ public class FinishPoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("Player")) {
             UnlockNewLevel();
-            TimeController.instance.EndTimer();
             winScreen.SetActive(true);
             player.gameObject.GetComponent<PlayerControl>().enabled = false;
         }

@@ -67,9 +67,8 @@ public class PlayerControl : MonoBehaviour
     }
 
     // Shows death/restart screen if player hits enemy
-    private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.CompareTag("Enemy")){
-            TimeController.instance.EndTimer();
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.CompareTag("Enemy")){
             restartScreen.SetActive(true);
             body.gameObject.GetComponent<PlayerControl>().enabled = false;
         }

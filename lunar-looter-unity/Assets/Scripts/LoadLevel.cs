@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class LoadLevel : MonoBehaviour
 {
     // Stores all level buttons
-    public Button[] buttons;
+    //public Button[] buttons;
 
     // Keeps track of which levels are locked and which are unlocked
-    private void Awake() {
+    /*private void Awake() {
 
         for(int i = 0; i < buttons.Length; i++){
             buttons[i].interactable = false;
@@ -22,7 +22,7 @@ public class LoadLevel : MonoBehaviour
         for(int i = 0; i < unlockedLevel; i++){
             buttons[i].interactable = true;
         }
-    }
+    }*/
 
     // Loads scene that matches the name inputted into parameter
     public void Load(string levelName) {

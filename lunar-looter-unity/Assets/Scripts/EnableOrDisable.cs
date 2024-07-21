@@ -5,7 +5,7 @@ using UnityEngine;
 // Code for making certain gameobjects appear on or off screen from usier interaction
 public class EnableOrDisable : MonoBehaviour
 {
-    public GameObject element;
+    [SerializeField] private GameObject element;
 
     // Element appears or disappears when user clicks button
     public void Clicked(){

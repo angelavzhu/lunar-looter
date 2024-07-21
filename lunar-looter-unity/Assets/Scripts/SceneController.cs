@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-    private Scene prevScene;
 
     private void Awake(){
         if(instance == null){
@@ -18,14 +17,6 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    private void Start(){
-        TimeController.instance.BeginTimer();
-        prevScene = SceneManager.GetActiveScene();
-    }
-
-    public string getScene(){
-        return prevScene.name;
-    }
 
     
 }
