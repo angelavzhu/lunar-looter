@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &670959034433079510
+--- !u!1 &2996558159448115055
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1989225640885436107}
-  - component: {fileID: 2586604708651643989}
-  - component: {fileID: 8349759592347718605}
-  - component: {fileID: 3863178618335327366}
-  - component: {fileID: 3504858295369546350}
-  - component: {fileID: 70293171389143321}
+  - component: {fileID: 2886807892488527955}
+  - component: {fileID: 3481190724519742108}
+  - component: {fileID: 4204536257506323539}
+  - component: {fileID: 6056356816696772312}
+  - component: {fileID: 2490003748291509633}
+  - component: {fileID: 6553167778633307679}
   m_Layer: 0
   m_Name: GhostEnemy
   m_TagString: Untagged
@@ -21,28 +21,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1989225640885436107
+--- !u!4 &2886807892488527955
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670959034433079510}
+  m_GameObject: {fileID: 2996558159448115055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.45, y: 1.38, z: 0}
+  m_LocalPosition: {x: 7.01, y: -2.01, z: 0}
   m_LocalScale: {x: 0.07149359, y: 0.07149359, z: 0.07149359}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2586604708651643989
+--- !u!212 &3481190724519742108
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670959034433079510}
+  m_GameObject: {fileID: 2996558159448115055}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,15 +88,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &8349759592347718605
+--- !u!50 &4204536257506323539
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670959034433079510}
-  m_BodyType: 0
+  m_GameObject: {fileID: 2996558159448115055}
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -115,13 +115,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &3863178618335327366
+--- !u!70 &6056356816696772312
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670959034433079510}
+  m_GameObject: {fileID: 2996558159448115055}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -150,13 +150,13 @@ CapsuleCollider2D:
   m_Offset: {x: -0.5264429, y: -1.6315497}
   m_Size: {x: 15.695519, y: 25.10604}
   m_Direction: 0
---- !u!114 &3504858295369546350
+--- !u!114 &2490003748291509633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670959034433079510}
+  m_GameObject: {fileID: 2996558159448115055}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2393d166ad2644147a14ba9ca4ef1607, type: 3}
@@ -164,20 +164,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPos: {fileID: 0}
   secondPos: {fileID: 0}
-  maxTime: 2
+  chaseTime: 0
   targetPos: {fileID: 0}
   speed: 2
   fovPeriph: {fileID: 0}
   fov: {fileID: 0}
   fovBack: {fileID: 0}
---- !u!95 &70293171389143321
+--- !u!95 &6553167778633307679
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670959034433079510}
+  m_GameObject: {fileID: 2996558159448115055}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2e12a49ef9239be41bb71a3981a506c6, type: 2}
