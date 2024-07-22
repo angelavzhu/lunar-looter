@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 4728247130977581656}
   - component: {fileID: 2812784942342079342}
   m_Layer: 5
-  m_Name: LevelMenuButton
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1829,7 +1829,7 @@ GameObject:
   - component: {fileID: 6678186369510671844}
   - component: {fileID: 4776271972952741197}
   m_Layer: 5
-  m_Name: LevelMenuText
+  m_Name: QuitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1895,7 +1895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Level Menu
+  m_Text: Quit
 --- !u!1 &2879075797739375566
 GameObject:
   m_ObjectHideFlags: 0
