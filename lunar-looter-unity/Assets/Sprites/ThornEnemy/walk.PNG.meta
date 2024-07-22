@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04ef49d306cef7b42ae27f99bd6255fb
+guid: 89944ae0a1be5d34e9892f306a88393b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Atk_0
+      name: idle1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d761aa138e5ddc408729e0bf81ce9bc
-      internalID: 974869467
+      spriteID: d2de9f4efe579704ebc011425d8f938e
+      internalID: -67283515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_1
+      name: idle1_1
       rect:
         serializedVersion: 2
         x: 640
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d553d86fa87864439a338ddd66f183f
-      internalID: 34442311
+      spriteID: 4c9ad17b9ca6ce84a88be4c014f2f25b
+      internalID: -99314122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_2
+      name: idle1_2
       rect:
         serializedVersion: 2
         x: 1280
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 917618690ede029409d63f1a7f4e8ba3
-      internalID: 1785669962
+      spriteID: ed1aa8eb0c16c6f479eebad3c2c09016
+      internalID: -1455243479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_3
+      name: idle1_3
       rect:
         serializedVersion: 2
         x: 1920
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d56c0f549cfb29c45ad8e9c53065213d
-      internalID: -126192366
+      spriteID: bfcf1934e660c964d898f1a4ac89101f
+      internalID: -1460298470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_4
+      name: idle1_4
       rect:
         serializedVersion: 2
         x: 2560
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8debd27896580f43a6b727f1619485b
-      internalID: -1157919216
+      spriteID: 91e09ed2976c0d34ebde0d5e2d1c0e32
+      internalID: -287587240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_5
+      name: idle1_5
       rect:
         serializedVersion: 2
         x: 3200
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3d124d19f64e3440a2392e3f44acb80
-      internalID: 721017880
+      spriteID: 04aca22c7a1fdad47be60be32e7a30b8
+      internalID: -5346562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_6
+      name: idle1_6
       rect:
         serializedVersion: 2
         x: 3840
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81f50ff8ae348a841b81b7c4abdbd839
-      internalID: 256436325
+      spriteID: f5c542e5611b4f841919652154aaba01
+      internalID: -331094763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_7
+      name: idle1_7
       rect:
         serializedVersion: 2
         x: 4480
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b29cf1eca0f10de4ea19676ceadde572
-      internalID: -1170275027
+      spriteID: a5e24147567cf334db8b00604c33a290
+      internalID: 1975605498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_8
+      name: idle1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 430e141bcba3e8c4584e86e9f44f366a
-      internalID: 570980438
+      spriteID: 6ead034ca22e5bb41a9989ea258aaae2
+      internalID: -601260605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atk_9
+      name: idle1_9
       rect:
         serializedVersion: 2
         x: 640
@@ -313,134 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8c057ccc473ddb4eb8d0c42c69eae95
-      internalID: -1196479814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atk_10
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 682cafde51d208841b4ce3ae7c99c961
-      internalID: 853358481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atk_11
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d592ca2ef15e1c047a8eac7a6846b094
-      internalID: 965689267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atk_12
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f07e0624e28c2945b01f2fccead98fa
-      internalID: -1934343624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atk_13
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ff429e0ac2850945b288896fcac047a
-      internalID: 689192210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atk_14
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9011366062dec2f429a4c60256a247f3
-      internalID: 862449028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atk_15
-      rect:
-        serializedVersion: 2
-        x: 4480
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b87d461c2401b143b16248d2506e364
-      internalID: 1834496260
+      spriteID: 864c67cd61c313841a8346d9a06ac669
+      internalID: -459144271
       vertices: []
       indices: 
       edges: []
@@ -456,22 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Atk_0: 974869467
-      Atk_1: 34442311
-      Atk_10: 853358481
-      Atk_11: 965689267
-      Atk_12: -1934343624
-      Atk_13: 689192210
-      Atk_14: 862449028
-      Atk_15: 1834496260
-      Atk_2: 1785669962
-      Atk_3: -126192366
-      Atk_4: -1157919216
-      Atk_5: 721017880
-      Atk_6: 256436325
-      Atk_7: -1170275027
-      Atk_8: 570980438
-      Atk_9: -1196479814
+      idle1_0: -67283515
+      idle1_1: -99314122
+      idle1_2: -1455243479
+      idle1_3: -1460298470
+      idle1_4: -287587240
+      idle1_5: -5346562
+      idle1_6: -331094763
+      idle1_7: 1975605498
+      idle1_8: -601260605
+      idle1_9: -459144271
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -164,10 +164,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPos: {fileID: 0}
   secondPos: {fileID: 0}
+  maxTime: 2
   targetPos: {fileID: 0}
   speed: 2
-  fovWide: {fileID: 0}
-  fovNarrow: {fileID: 0}
+  fovPeriph: {fileID: 0}
+  fov: {fileID: 0}
+  fovBack: {fileID: 0}
 --- !u!95 &70293171389143321
 Animator:
   serializedVersion: 5
