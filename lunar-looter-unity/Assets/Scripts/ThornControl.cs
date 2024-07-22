@@ -117,7 +117,6 @@ public class ThornControl : EnemyControl
         rotateSpeed = -rotateSpeed;
        }
        aimDirection += AngleToVector(rotateSpeed);
-       Debug.Log("rotated " + aimDirection);
     }
 
     // Control what the enemy does when the player enters the enemy FOV
