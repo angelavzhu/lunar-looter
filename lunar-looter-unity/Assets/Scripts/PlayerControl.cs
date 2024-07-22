@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
     // the x and y position of the player
     float x,y;
 
+    private Boolean moving;
+
     // the rigidbody of the player
     Rigidbody2D body;
 
@@ -19,7 +21,6 @@ public class PlayerControl : MonoBehaviour
 
     // reference to the FOV
     [SerializeField] private FieldOfView fov;
-
     // animation controller object
     Animator playerAnimator;
 
@@ -30,6 +31,7 @@ public class PlayerControl : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        moving = false;
     }
 
     // Update is called once per frame
@@ -49,15 +51,19 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    
+    // whether the player is moving
+    public Boolean isMoving(){
+        return moving;
+    }
 
+    // polls input from the keyboard and moves the player
     private void Move(){
-        // if(!collide) {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
             if(horizontal == 0 && vertical == 0){
                 body.velocity = new UnityEngine.Vector2(0,0);
+                moving = false;
                 return;
             }
 
@@ -65,7 +71,7 @@ public class PlayerControl : MonoBehaviour
             y =  vertical * moveSpeed;
             
             body.velocity = new UnityEngine.Vector2(x,y);
-        // }
+            moving = true;
     }
 
     // Shows death/restart screen if player hits enemy

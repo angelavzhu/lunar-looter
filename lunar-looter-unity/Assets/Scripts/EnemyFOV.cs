@@ -5,7 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // Based on code by Code Monkey
-public class EnemyFieldOfView : MonoBehaviour
+public class EnemyFOV : MonoBehaviour
 {
     // the mesh of the FOV
     private Mesh mesh;
@@ -15,6 +15,9 @@ public class EnemyFieldOfView : MonoBehaviour
 
     // the starting angle of the FOV
     private float startingAngle;
+
+    // whether the FOV is on
+    private Boolean FOVOn;
 
     // angle of the sightcone for the enemy (wider/narrower sight line)
     [SerializeField] private float fov;
@@ -33,16 +36,24 @@ public class EnemyFieldOfView : MonoBehaviour
     void Start()
     {
         mesh = new Mesh();
+        
         //origin of sight cone
         origin = Vector3.zero;
 
         GetComponent<MeshFilter>().mesh = mesh;
+        FOVOn = true;
     }
 
     //called every frame: AFTER player update is called
     void LateUpdate(){ 
         // NOTE: FOV is blocked by objects in the layer "walls", must change this in editor. 
-        CreateFOV();
+        if(FOVOn){
+            CreateFOV();
+            GetComponent<MeshRenderer>().enabled = true;
+        } else {
+            GetComponent<MeshRenderer>().enabled = false;
+            enemy.SeePlayer(false);
+        }
     }
 
 
@@ -57,11 +68,10 @@ public class EnemyFieldOfView : MonoBehaviour
         //how much the angle changes as you turn
         float angleIncrease = fov/rayCount;
 
-        //start at origin (1 vertex) + 2 rays
-        // num rays dont count 0 so have to add 1 for 0 ray
-        Vector3[] vertices = new Vector3[rayCount + 1 + 1];
+        //start at origin (1 vertex) + rayCount rays
+        // num rays dont count 0 so have to add 1 for 0 ray (+2 total)
+        Vector3[] vertices = new Vector3[rayCount + 2];
 
-        // Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[rayCount * 3];
 
         // origin
@@ -105,7 +115,7 @@ public class EnemyFieldOfView : MonoBehaviour
         }
         
         //process whether enemy saw the player
-        enemy.seePlayer(seePlayer);
+        enemy.SeePlayer(seePlayer);
 
 
         mesh.vertices = vertices;
@@ -122,6 +132,15 @@ public class EnemyFieldOfView : MonoBehaviour
     // Sets the angle for the FOV
     public void SetAim(Vector2 direction){
         startingAngle = VectorToAngle(direction) + (fov / 2f);
+    }
+
+    // turns the FOV off (doesn't draw nor raycast)
+    public void Toggle(){
+        if (FOVOn) { 
+            FOVOn = false; 
+        } else {
+            FOVOn = true;
+        }    
     }
 
     // Converts an angle to a Vector3
