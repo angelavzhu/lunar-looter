@@ -53,7 +53,7 @@ public class FieldOfView : MonoBehaviour
         float angleIncrease = fov/rayCount;
 
         //how far the character can see
-        float viewDistance = 4f;
+        float viewDistance = 6f;
 
         //start at origin (1 vertex) + 2 rays
         // num rays dont count 0 so have to add 1 for 0 ray
