@@ -91,12 +91,15 @@ public class FireControl : EnemyControl
             transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
         }
     }
-
+    
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         Rigidbody2D rigid = GetComponent<Rigidbody2D>();
         rigid.velocity = UnityEngine.Vector2.zero;
-        collide = true;
+        if(!(collision.gameObject.layer == 3 || collision.gameObject.tag == "Enemy")) {
+            //don't freeze if collide with wall or other enemy
+            collide = true;
+        }
     }
 
     protected override void OnCollisionExit2D(Collision2D collision)

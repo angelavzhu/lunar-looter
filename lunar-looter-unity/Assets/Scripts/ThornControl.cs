@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Experimental;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ThornControl : EnemyControl
 {
@@ -27,9 +28,14 @@ public class ThornControl : EnemyControl
     // the max time the enemy should chase the player after leaving the view range
     [SerializeField] public float chaseTime;
 
+    // how long the FOV is flipping (turn)
+    float flipTime = 0f;
+
     // whether the enemy is colliding with anything
     private Boolean collide;
 
+    // whether the enemy is turning 
+    private Boolean turning;
 
     // point enemy currently moves towards
     [SerializeField] private Transform targetPos;
@@ -37,7 +43,7 @@ public class ThornControl : EnemyControl
     // how fast enemy moves
     [SerializeField] private float speed;
 
-    // the amount of degrees the FOV rotates
+    // the amount of degrees the FOV rotates (0-90 degrees which is mirrored on the other side)
     [SerializeField] private float degrees;
 
     // how fast the FOV rotates
@@ -45,6 +51,9 @@ public class ThornControl : EnemyControl
 
     // direction enemy viewcones point towards
     private Vector2 aimDirection;
+
+    // where the enemy is moving (different that aimDirection because FOV is rotating)
+    private Vector2 moveDirection;
     
     [SerializeField] private EnemyFOV fov;
     [SerializeField] private EnemyFOV fovBack;
@@ -53,11 +62,13 @@ public class ThornControl : EnemyControl
 
     void Start()
     {
-        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
-        isChasing = false;
         Player = GameObject.FindWithTag("Player").transform;
-        chaseDuration = 0f;
+        moveDirection = targetPos.position - transform.position;
+        aimDirection = moveDirection;
+        isChasing = false;
         collide = false;
+        turning = false;
+        chaseDuration = 0f;
     }
 
     // Updates direction of vision cones and vision cone origins and checks for collisions
@@ -100,23 +111,38 @@ public class ThornControl : EnemyControl
     void Move(){
         if(Vector2.Distance(transform.position, firstPos.position) < 0.01f){
             targetPos = secondPos;
+            turning = true;
         }
-        if(Vector2.Distance(transform.position, secondPos.position) < 0.01f){
+        else if(Vector2.Distance(transform.position, secondPos.position) < 0.01f){
             targetPos = firstPos;
+            turning = true;
+
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
-        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
-        
+        moveDirection = targetPos.position - transform.position;    
     }
 
     // rotates the enemy's FOV
     //TODO: works until the FOV is changed as the enemy moves (turns), need way to track and reset angle?
     private void Rotate(){ 
-       Vector2 newDir = aimDirection + AngleToVector(rotateSpeed);
-       if(VectorToAngle(newDir) > degrees || VectorToAngle(newDir) < -degrees) {
-        rotateSpeed = -rotateSpeed;
+        //must rotate the axis: 90 degrees is always where the enemy is aiming
+       float newAim = VectorToAngle(aimDirection) + rotateSpeed;
+       float new180 = VectorToAngle(moveDirection) + degrees;
+       float newZero = VectorToAngle(moveDirection) - degrees;
+       if (turning) {
+            newAim = VectorToAngle(aimDirection) + rotateSpeed * 4;
+            // Debug.Log(newAim + " " + rotateSpeed);
+            if(Math.Abs(newAim - VectorToAngle(moveDirection)) < degrees) {
+                turning = false;
+                flipTime -= 1;
+            }
        }
-       aimDirection += AngleToVector(rotateSpeed);
+       else if(newAim > new180 || newAim < newZero) {
+        //FOV out of bounds, rotate the other way
+        rotateSpeed = -rotateSpeed;
+        newAim = VectorToAngle(aimDirection) + rotateSpeed;
+       }
+       aimDirection = AngleToVector(newAim);
     }
 
     // Control what the enemy does when the player enters the enemy FOV
@@ -158,7 +184,7 @@ public class ThornControl : EnemyControl
         return new Vector3(Mathf.Cos(angleRadius), Mathf.Sin(angleRadius));
     }
 
-    //Converts a Vector3 to an angle (float)
+    //Converts a Vector3 to an angle (float, degrees)
     private float VectorToAngle(Vector2 vector) {
         vector = vector.normalized;
         float angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
