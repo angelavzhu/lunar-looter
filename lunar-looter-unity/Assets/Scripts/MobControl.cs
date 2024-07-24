@@ -54,7 +54,7 @@ public class MobControl : EnemyControl
         Player = GameObject.FindWithTag("Player").transform;
         chaseDuration = 0f;
         collide = false;
-        fillCells();
+        // fillCells();
     }
 
     // Updates direction of vision cones and vision cone origins and checks for collisions
@@ -71,8 +71,8 @@ public class MobControl : EnemyControl
 
         if(isChasing && !collide){ 
             ChasePlayer();
-        // } else if (!collide){
-        //     Move();
+        } else if (!collide){
+            Move();
         }
 
     }
@@ -124,20 +124,20 @@ public class MobControl : EnemyControl
 
     // Handles when the player is seen by the enemy
     protected override void ChasePlayer(){
-        // if (Vector3.Distance(transform.position, Player.position) >= 0.01f)
-        // {
-        //     transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
-        // }
-        // aimDirection = new Vector2(Player.position.x - transform.position.x, Player.position.y - transform.position.y);
-        Stack<Vector2> path = FindPath();
-        if(path != null) {
-            while(transform.position.Equals(path.Peek())) {
-                path.Pop();
-            }
-            transform.position = path.Peek()/2;
-            aimDirection = path.Peek() - (Vector2)transform.position;
-            Debug.Log(transform.position);
+        if (Vector3.Distance(transform.position, Player.position) >= 0.01f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
         }
+        aimDirection = new Vector2(Player.position.x - transform.position.x, Player.position.y - transform.position.y);
+        // Stack<Vector2> path = FindPath();
+        // if(path != null) {
+        //     while(transform.position.Equals(path.Peek())) {
+        //         path.Pop();
+        //     }
+        //     transform.position = path.Peek()/2;
+        //     aimDirection = path.Peek() - (Vector2)transform.position;
+        //     Debug.Log(transform.position);
+        // }
     }
 
     // Handles when the player is out of the enemy FOV. The enemy will continue to chase the player

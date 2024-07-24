@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fov: 80
-  viewDistance: 2
+  viewDistance: 1
   layermask:
     serializedVersion: 2
     m_Bits: 136

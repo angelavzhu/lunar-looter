@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fov: 60
-  viewDistance: 4
+  viewDistance: 3
   layermask:
     serializedVersion: 2
     m_Bits: 136
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fov: 80
-  viewDistance: 5
+  viewDistance: 4
   layermask:
     serializedVersion: 2
     m_Bits: 136
