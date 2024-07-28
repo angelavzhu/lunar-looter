@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 989550342800898716}
   - component: {fileID: 1109030376733459974}
   - component: {fileID: 2525405899325850158}
-  - component: {fileID: 3008331572562312807}
+  - component: {fileID: 4882406499957983057}
   m_Layer: 5
   m_Name: LevelMenu
   m_TagString: Untagged
@@ -159,10 +159,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3008331572562312807}
-        m_TargetAssemblyTypeName: LoadLevel, Assembly-CSharp
+      - m_Target: {fileID: 4882406499957983057}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: Load
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -171,7 +171,7 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3008331572562312807
+--- !u!114 &4882406499957983057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1565146918344672790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ae83cceb23d7c4ca20a4e33f4cda5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a1bcf4e029e50f4893844b49c646214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5746160126623150245
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 6000315009392115285}
   - component: {fileID: 6849578853149769170}
   - component: {fileID: 6560697688191969963}
-  - component: {fileID: 2661899047733716021}
+  - component: {fileID: 5688875298487095033}
   m_Layer: 5
   m_Name: NextLevel
   m_TagString: Untagged
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2661899047733716021}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadLevel, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 5
@@ -391,7 +391,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2661899047733716021
+--- !u!114 &5688875298487095033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,6 +400,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8142954954483264909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ae83cceb23d7c4ca20a4e33f4cda5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a1bcf4e029e50f4893844b49c646214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
