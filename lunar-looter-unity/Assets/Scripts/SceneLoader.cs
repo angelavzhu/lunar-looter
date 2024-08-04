@@ -38,4 +38,8 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
     }
+
+    public void restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
