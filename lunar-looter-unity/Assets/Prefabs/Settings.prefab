@@ -86,7 +86,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.515
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -136,7 +136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.183773, y: 4.67}
+  m_AnchoredPosition: {x: 5.1837616, y: 4.67}
   m_SizeDelta: {x: 15.57355, y: 0.78747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5286114745537262299
@@ -593,17 +593,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 3908236784911128615}
   m_HandleRect: {fileID: 7229386588310130467}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7929622176432929623}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetSfxVolume
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1223,17 +1223,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 7599009447050597631}
   m_HandleRect: {fileID: 4819026492679929600}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7929622176432929623}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetVolume
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1537,7 +1537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.183773, y: 4.67}
+  m_AnchoredPosition: {x: 5.1837616, y: 4.67}
   m_SizeDelta: {x: 15.57355, y: 0.78747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &961858365319841503
@@ -1633,6 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMixer: {fileID: 24100000, guid: a72f5014e98fe034db80da66f8b29a80, type: 2}
+  masterControl: {fileID: 8632598162392875194}
   sfxControl: {fileID: 7567824955037943004}
 --- !u!1 &9106602463891236083
 GameObject:

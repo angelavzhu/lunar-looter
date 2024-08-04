@@ -23,6 +23,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private FieldOfView fov;
     // animation controller object
     Animator playerAnimator;
+    // Audio source for footsteps
+    [SerializeField] private AudioSource footsteps;
 
     public GameObject restartScreen;
 
@@ -64,6 +66,7 @@ public class PlayerControl : MonoBehaviour
             if(horizontal == 0 && vertical == 0){
                 body.velocity = new UnityEngine.Vector2(0,0);
                 moving = false;
+                footsteps.enabled = false;
                 return;
             }
 
@@ -72,6 +75,7 @@ public class PlayerControl : MonoBehaviour
             
             body.velocity = new UnityEngine.Vector2(x,y);
             moving = true;
+            footsteps.enabled = true;
     }
 
     // Shows death/restart screen if player hits enemy

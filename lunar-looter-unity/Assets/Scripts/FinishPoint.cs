@@ -8,7 +8,7 @@ public class FinishPoint : MonoBehaviour
     public GameObject winScreen;
     [SerializeField] private Transform player;
 
-    // If player reaches this point, goes to the scene for the next level and unlocks that level
+    // If player reaches finishing point, goes to the scene for the next level and unlocks that level
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("Player")) {
             UnlockNewLevel();
@@ -17,6 +17,7 @@ public class FinishPoint : MonoBehaviour
         }
     }
 
+    // The next level is unlocked and its level number and build index are stored
     private void UnlockNewLevel() {
         if(SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("ReachedIndex")) {
             PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
