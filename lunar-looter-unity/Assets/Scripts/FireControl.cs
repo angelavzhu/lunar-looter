@@ -62,6 +62,7 @@ public class FireControl : EnemyControl
         } else if (state == (int) State.Return) {
             transform.position = Vector2.MoveTowards(transform.position, originalPos.position, speed * Time.deltaTime);
             state = (int) State.Idle;
+            Debug.Log("return");
         } else {
             Sleep();
         }
@@ -96,7 +97,6 @@ public class FireControl : EnemyControl
             // enemy chase cools down, return to idle
             state = (int) State.Return;
             chaseDuration -= chaseTime;
-            Debug.Log("return to position");
         }
     }
 
@@ -107,18 +107,18 @@ public class FireControl : EnemyControl
         }
     }
     
-    protected override void OnCollisionEnter2D(Collision2D collision)
-    {
-        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
-        rigid.velocity = UnityEngine.Vector2.zero;
-        if(!(collision.gameObject.layer == 3 || collision.gameObject.tag == "Enemy")) {
-            //don't freeze if collide with wall or other enemy
-            collide = true;
-        }
-    }
+    // protected override void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     Rigidbody2D rigid = GetComponent<Rigidbody2D>();
+    //     rigid.velocity = UnityEngine.Vector2.zero;
+    //     if(!(collision.gameObject.layer == 3 || collision.gameObject.tag == "Enemy")) {
+    //         //don't freeze if collide with wall or other enemy
+    //         collide = true;
+    //     }
+    // }
 
-    protected override void OnCollisionExit2D(Collision2D collision)
-    {
-        collide = false;
-    }
+    // protected override void OnCollisionExit2D(Collision2D collision)
+    // {
+    //     collide = false;
+    // }
 }
