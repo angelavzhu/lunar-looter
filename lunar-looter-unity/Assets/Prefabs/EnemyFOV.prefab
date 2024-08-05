@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9719233f46bb64b914742496ed9e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fov: 60
-  viewDistance: 3
+  fov: 80
+  viewDistance: 3.5
   layermask:
     serializedVersion: 2
     m_Bits: 136
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b42d0655e3d164c87cc8f85d1734bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fov: 110
+  fov: 120
   viewDistance: 3.5
   layermask:
     serializedVersion: 2
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fov: 80
-  viewDistance: 2
+  viewDistance: 2.5
   layermask:
     serializedVersion: 2
     m_Bits: 136

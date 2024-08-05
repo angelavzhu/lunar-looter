@@ -61,8 +61,9 @@ public class FireControl : EnemyControl
             ChasePlayer();
         } else if (state == (int) State.Return) {
             transform.position = Vector2.MoveTowards(transform.position, originalPos.position, speed * Time.deltaTime);
-            state = (int) State.Idle;
-            Debug.Log("return");
+            if((Vector2) transform.position == (Vector2) originalPos.position) {
+                state = (int) State.Idle;
+            }
         } else {
             Sleep();
         }
