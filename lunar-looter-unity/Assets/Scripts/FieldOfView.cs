@@ -1,7 +1,5 @@
 using System;
 using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.Sqlite;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // Based on code by Code Monkey

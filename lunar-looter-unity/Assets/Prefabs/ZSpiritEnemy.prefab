@@ -149,8 +149,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 17.409876, y: 30.52565}
+  m_Offset: {x: 0.22382215, y: -0.4476497}
+  m_Size: {x: 14.723999, y: 25.825367}
   m_Direction: 0
 --- !u!95 &4695555021510674468
 Animator:
@@ -190,6 +190,7 @@ MonoBehaviour:
   chaseTime: 2
   targetPos: {fileID: 0}
   speed: 2
+  rotateSpeed: 0
   fovPeriph: {fileID: 0}
   fov: {fileID: 0}
   fovBack: {fileID: 0}
