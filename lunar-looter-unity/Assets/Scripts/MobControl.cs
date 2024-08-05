@@ -8,17 +8,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-
+/// <summary>
+/// A class for mobs/ghost enemies, which move in a set pattern and have static triangular sight 
+/// cones with peripheral vision.
+/// </summary>
 public class MobControl : EnemyControl
 {
+    // the state that the enemy is in
+    private int state;
     // starting point enemy moves to
     public Transform firstPos;
 
     // next point enemy moves to
     public Transform secondPos;
-
-    //whether the enemy is chasing the player
-    private Boolean isChasing;
 
     // the player (for chasing)
     private Transform Player;
@@ -32,7 +34,6 @@ public class MobControl : EnemyControl
     // whether the enemy is colliding with anything
     private Boolean collide;
 
-
     // point enemy currently moves towards
     [SerializeField] private Transform targetPos;
 
@@ -42,18 +43,20 @@ public class MobControl : EnemyControl
     // direction enemy viewcones point towards
     private Vector2 aimDirection;
     
+    //how fast the enemy rotates to see the player when noticed
+    [SerializeField] private float rotateSpeed;
 
-    [SerializeField] private EnemyFOV fovPeriph;
+    [SerializeField] private PeripheralVision fovPeriph;
     [SerializeField] private EnemyFOV fov;
     [SerializeField] private EnemyFOV fovBack;
 
     void Start()
     {
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
-        isChasing = false;
         Player = GameObject.FindWithTag("Player").transform;
         chaseDuration = 0f;
         collide = false;
+        state = (int) State.Idle;
         // fillCells();
     }
 
@@ -69,30 +72,15 @@ public class MobControl : EnemyControl
         fovBack.SetAim(-aimDirection);
         fovBack.SetOrigin(transform.position);
 
-        if(isChasing && !collide){ 
+        if(state == (int) State.Chasing){ 
             ChasePlayer();
-        } else if (!collide){
+        } else if (state == (int) State.Return){
+            transform.position = Vector2.MoveTowards(transform.position, firstPos.position, speed * Time.deltaTime);
+            state = (int) State.Idle;
+        } else {
             Move();
         }
 
-    }
-
-    //Method to stop from moving when collide with something
-    protected override void OnCollisionEnter2D(Collision2D collision)
-    {
-        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
-        rigid.velocity = UnityEngine.Vector2.zero;
-        if(!(collision.gameObject.layer == 3 || collision.gameObject.tag == "Enemy")) {
-            //don't freeze if collide with wall or other enemy
-            collide = true;
-        }
-
-    }
-
-    //Method to stop from moving when collide with something
-    protected override void OnCollisionExit2D(Collision2D collision)
-    {
-        collide = false;
     }
 
 // Enemy moves back and forth from one position to another and changes aim direction based on
@@ -113,14 +101,32 @@ public class MobControl : EnemyControl
     public override void SeePlayer(Boolean see){
         if(see){
             //see the player
-            isChasing = see;
+            state = (int) State.Chasing;
         } else {
             //don't see the player
-            if(isChasing){
+            if(state == (int) State.Chasing){
                 OutOfRange();
             }
         }
     }
+
+     public override void NoticePlayer(Boolean see, Vector3 pos)
+    {
+        if(see) {
+            if(state != (int) State.Chasing) {
+                state = (int) State.Notice;
+                aimDirection = aimDirection + rotateSpeed * (Vector2) pos.normalized;
+            }
+        } else {
+            state = (int) State.Idle;
+        }
+    }
+
+    public override bool Noticed()
+    {
+        return (state == (int) State.Notice);
+    }
+
 
     // Handles when the player is seen by the enemy
     protected override void ChasePlayer(){
@@ -145,9 +151,27 @@ public class MobControl : EnemyControl
     protected override void OutOfRange(){
         chaseDuration += Time.deltaTime;
         if(chaseDuration > chaseTime) {
-            isChasing = false;
+            state = (int) State.Return;
             chaseDuration = chaseDuration - chaseTime;
         }
+    }
+
+     //Method to stop from moving when collide with something
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
+        rigid.velocity = UnityEngine.Vector2.zero;
+        if(!(collision.gameObject.layer == 3 || collision.gameObject.tag == "Enemy")) {
+            //don't freeze if collide with wall or other enemy
+            collide = true;
+        }
+
+    }
+
+    //Method to stop from moving when collide with something
+    protected override void OnCollisionExit2D(Collision2D collision)
+    {
+        collide = false;
     }
 
     public void Destroy(){

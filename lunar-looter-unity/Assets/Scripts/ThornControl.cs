@@ -131,7 +131,6 @@ public class ThornControl : EnemyControl
        float newZero = VectorToAngle(moveDirection) - degrees;
        if (turning) {
             newAim = VectorToAngle(aimDirection) + rotateSpeed * 4;
-            // Debug.Log(newAim + " " + rotateSpeed);
             if(Math.Abs(newAim - VectorToAngle(moveDirection)) < degrees) {
                 turning = false;
                 flipTime -= 1;

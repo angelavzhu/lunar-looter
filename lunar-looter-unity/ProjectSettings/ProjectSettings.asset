@@ -725,11 +725,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: c870b984-d8d8-4f3f-a95a-fde896282953
+  cloudProjectId: bafdd1cd-ce99-46d5-aada-f4b967f2448d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Lunar Looter (1)
-  organizationId: chenc231
+  projectName: My project (1)
+  organizationId: angelzhua
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
