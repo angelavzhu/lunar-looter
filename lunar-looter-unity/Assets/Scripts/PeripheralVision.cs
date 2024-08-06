@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 // Based on code by Code Monkey
-public class EnemyFOV : MonoBehaviour
+public class PeripheralVision : MonoBehaviour
 {
     // the mesh of the FOV
     private Mesh mesh;
@@ -14,8 +14,8 @@ public class EnemyFOV : MonoBehaviour
     // the starting angle of the FOV
     private float startingAngle;
 
-    // whether the FOV is on
-    private Boolean FOVOn;
+    // the location of the player as seen in peripheral
+    private Vector3 playerLoc;
 
     // angle of the sightcone for the enemy (wider/narrower sight line)
     [SerializeField] private float fov;
@@ -39,19 +39,13 @@ public class EnemyFOV : MonoBehaviour
         origin = Vector3.zero;
 
         GetComponent<MeshFilter>().mesh = mesh;
-        FOVOn = true;
     }
 
     //called every frame: AFTER player update is called
     void LateUpdate(){ 
-        // NOTE: FOV is blocked by objects in the layer "walls", must change this in editor. 
-        if(FOVOn){
-            CreateFOV();
-            GetComponent<MeshRenderer>().enabled = true;
-        } else {
-            GetComponent<MeshRenderer>().enabled = false;
-            enemy.SeePlayer(false);
-        }
+        // peripheral FOV is invisible
+        CreateFOV();
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
 
@@ -80,7 +74,7 @@ public class EnemyFOV : MonoBehaviour
         //forms 2 triangles
         int triangleIndex = 0;
         //need to see for every vertex if it sees the player: if all don't see, then false
-        Boolean seePlayer = false;
+        Boolean noticePlayer = false;
 
         for(int i = 1; i <= rayCount + 1; i++){
             //instead of a set position, each vertex should be raycasted
@@ -94,7 +88,8 @@ public class EnemyFOV : MonoBehaviour
                  //something blocking the FOV: set vertex to where it was blocked
                 if (hit.tag == "Player") {
                     //player enters vision
-                    seePlayer = true;
+                    noticePlayer = true;
+                    playerLoc = ray.point;
                 } else {
                     // see a wall: stop sight cone at wall
                     vertex = ray.point;
@@ -111,9 +106,9 @@ public class EnemyFOV : MonoBehaviour
             }
         angle -= angleIncrease;
         }
-        
+
         //process whether enemy saw the player
-        enemy.SeePlayer(seePlayer);
+        enemy.NoticePlayer(noticePlayer, playerLoc);
 
 
         mesh.vertices = vertices;
@@ -130,15 +125,6 @@ public class EnemyFOV : MonoBehaviour
     // Sets the angle for the FOV
     public void SetAim(Vector2 direction){
         startingAngle = VectorToAngle(direction) + (fov / 2f);
-    }
-
-    // turns the FOV off (doesn't draw nor raycast)
-    public void Toggle(){
-        if (FOVOn) { 
-            FOVOn = false; 
-        } else {
-            FOVOn = true;
-        }    
     }
 
     // Converts an angle to a Vector3

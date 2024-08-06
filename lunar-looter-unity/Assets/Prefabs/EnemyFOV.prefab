@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9719233f46bb64b914742496ed9e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fov: 60
-  viewDistance: 3
+  fov: 80
+  viewDistance: 3.5
   layermask:
     serializedVersion: 2
     m_Bits: 136
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8767824019864196170}
   - component: {fileID: 237011178015230412}
   - component: {fileID: 3807321676032050928}
-  - component: {fileID: 4491006270940190471}
+  - component: {fileID: 5991643529712606994}
   m_Layer: 2
   m_Name: EnemyFOVPeriph
   m_TagString: Untagged
@@ -188,7 +188,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4491006270940190471
+--- !u!114 &5991643529712606994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,10 +197,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4577965185879186512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9719233f46bb64b914742496ed9e78, type: 3}
+  m_Script: {fileID: 11500000, guid: e4b42d0655e3d164c87cc8f85d1734bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fov: 90
+  fov: 120
   viewDistance: 3.5
   layermask:
     serializedVersion: 2
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fov: 80
-  viewDistance: 2
+  viewDistance: 2.5
   layermask:
     serializedVersion: 2
     m_Bits: 136
