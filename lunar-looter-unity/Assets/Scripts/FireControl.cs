@@ -67,13 +67,10 @@ public class FireControl : EnemyControl
                 state = (int) State.Idle;
             }
         } else {
-            Sleep();
-        }
-        else {
             attack.SetActive(false);
             idle.SetActive(true);
+            Sleep();
         }
-        Sleep();
     }
 
     public override void SeePlayer(bool see)
