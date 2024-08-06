@@ -35,8 +35,8 @@ public class FireControl : EnemyControl
     private float awakeDuration;
 
     // Audio for enemy
-    [SerializeField] private AudioSource idle;
-    [SerializeField] private AudioSource attack;
+    [SerializeField] private GameObject idle;
+    [SerializeField] private GameObject attack;
 
 
     // Start is called before the first frame update
@@ -48,8 +48,8 @@ public class FireControl : EnemyControl
         collide = false;
         sleeping = false;
         Player = GameObject.FindWithTag("Player").transform;
-        //idle.enabled = true;
-        //attack.enabled = false;
+        idle.SetActive(true);
+        attack.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,8 +60,8 @@ public class FireControl : EnemyControl
             ChasePlayer();
         }
         else {
-            //attack.enabled = false;
-            //idle.enabled = true;
+            attack.SetActive(false);
+            idle.SetActive(true);
         }
         Sleep();
     }
@@ -99,8 +99,8 @@ public class FireControl : EnemyControl
         if (Vector3.Distance(transform.position, Player.position) >= 0.01f)
         {
             transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
-            //idle.enabled = false;
-            //attack.enabled = true;
+            idle.SetActive(false);
+            attack.SetActive(true);
         }
     }
     

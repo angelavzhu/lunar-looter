@@ -335,7 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listenerTransform: {fileID: 0}
-  audioSource: {fileID: 0}
+  idle: {fileID: 3727188587885958457}
+  attack: {fileID: 5792904312867596116}
 --- !u!1 &5053576901650233622
 GameObject:
   m_ObjectHideFlags: 0

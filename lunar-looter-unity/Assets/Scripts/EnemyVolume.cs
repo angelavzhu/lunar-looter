@@ -7,11 +7,12 @@ public class EnemyVolume : MonoBehaviour
     // Player object
     [SerializeField] private Transform listenerTransform;
     // Enemy audio source
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource idle;
+    [SerializeField] private AudioSource attack;
     // Minimum distance player can hear enemy from
     private float minDist = 1;
     // Maximum distance player can hear enemy from
-    private float maxDist = 20;
+    private float maxDist = 10;
 
     // As player gets farther or closer to enemy, changes volume of enemy sfx
     void Update()
@@ -20,15 +21,18 @@ public class EnemyVolume : MonoBehaviour
 
         if(dist < minDist)
         {
-            audioSource.volume = 1;
+            idle.volume = 1;
+            attack.volume = 1;
         }
         else if(dist > maxDist)
         {
-            audioSource.volume = 0;
+            idle.volume = 0;
+            attack.volume = 0;
         }
         else
         {
-            audioSource.volume = 1 - ((dist - minDist) / (maxDist - minDist));
+            idle.volume = 1 - ((dist - minDist) / (maxDist - minDist));
+            attack.volume = 1 - ((dist - minDist) / (maxDist - minDist));
         }
     }
 }

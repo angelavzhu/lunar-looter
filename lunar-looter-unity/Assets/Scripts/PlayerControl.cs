@@ -34,6 +34,7 @@ public class PlayerControl : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         moving = false;
+        footsteps.enabled = false;
     }
 
     // Update is called once per frame
