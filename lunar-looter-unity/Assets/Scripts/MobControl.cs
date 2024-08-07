@@ -52,7 +52,7 @@ public class MobControl : EnemyControl
 
     void Start()
     {
-        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+        aimDirection = targetPos.position - transform.position;
         Player = GameObject.FindWithTag("Player").transform;
         chaseDuration = 0f;
         collide = false;
@@ -63,22 +63,24 @@ public class MobControl : EnemyControl
     // Updates direction of vision cones and vision cone origins and checks for collisions
     void LateUpdate()
     {
-        fovPeriph.SetAim(aimDirection);
+        fovPeriph.SetAim(aimDirection, "periph");
         fovPeriph.SetOrigin(transform.position);
 
         fov.SetAim(aimDirection);
         fov.SetOrigin(transform.position);
 
-        fovBack.SetAim(-aimDirection);
+        fovBack.SetAim(-aimDirection, "back");
         fovBack.SetOrigin(transform.position);
+        // fovBack.Inverted();
 
         if(state == (int) State.Chasing){ 
             ChasePlayer();
         } else if (state == (int) State.Return){
             transform.position = Vector2.MoveTowards(transform.position, firstPos.position, speed * Time.deltaTime);
             state = (int) State.Idle;
+        } else if (state != (int) State.Notice) {
+            // Move();
         } else {
-            Move();
         }
 
     }
@@ -94,7 +96,6 @@ public class MobControl : EnemyControl
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
-        
     }
 
     // Control what the enemy does when the player enters the enemy FOV
@@ -113,10 +114,9 @@ public class MobControl : EnemyControl
      public override void NoticePlayer(Boolean see, Vector3 pos)
     {
         if(see) {
-            Debug.Log("noticed player");
             if(state != (int) State.Chasing) {
                 state = (int) State.Notice;
-                aimDirection = aimDirection + rotateSpeed * (Vector2) pos.normalized;
+                aimDirection = Vector3.Slerp(transform.position, pos, rotateSpeed);
             }
         } else {
             state = (int) State.Idle;
