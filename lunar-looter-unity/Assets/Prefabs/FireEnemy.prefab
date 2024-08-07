@@ -190,9 +190,8 @@ MonoBehaviour:
   chaseTime: 2
   awakeTime: 2
   fov: {fileID: 0}
-  originalPos: {fileID: 0}
-  idle: {fileID: 0}
-  attack: {fileID: 0}
+  idle: {fileID: 9088854295509393337}
+  attack: {fileID: 8673201750916653942}
 --- !u!114 &2730124847159629154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listenerTransform: {fileID: 0}
-  audioSource: {fileID: 0}
+  idle: {fileID: 6064592481940356240}
+  attack: {fileID: 790514662919540639}
 --- !u!1 &8673201750916653942
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4591749033625570349, guid: a72f5014e98fe034db80da66f8b29a80, type: 2}
   m_audioClip: {fileID: 8300000, guid: 66b3e01a16b84584f84b842c8e889290, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0

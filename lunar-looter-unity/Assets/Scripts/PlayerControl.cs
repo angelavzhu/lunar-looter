@@ -34,6 +34,7 @@ public class PlayerControl : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         moving = false;
+        footsteps.enabled = false;
     }
 
     // Update is called once per frame
@@ -80,10 +81,12 @@ public class PlayerControl : MonoBehaviour
 
     // Shows death/restart screen if player hits enemy
     private void OnCollisionEnter2D(Collision2D collision){
-        // if(collision.gameObject.CompareTag("Enemy")){
-        //     restartScreen.SetActive(true);
-        //     body.gameObject.GetComponent<PlayerControl>().enabled = false;
-        // }
+        if(collision.gameObject.CompareTag("Enemy")){
+            restartScreen.SetActive(true);
+            body.gameObject.GetComponent<PlayerControl>().enabled = false;
+            body.velocity = new UnityEngine.Vector2(0,0);
+            footsteps.enabled = false;
+        }
     }
 
     // Player animation

@@ -52,6 +52,10 @@ public class MobControl : EnemyControl
     [SerializeField] private EnemyFOV fov;
     [SerializeField] private PeripheralVision fovBack;
 
+    // Audiosources
+    [SerializeField] private GameObject idle;
+    [SerializeField] private GameObject attack;
+
     void Start()
     {
         aimDirection = targetPos.position - transform.position;
@@ -62,6 +66,8 @@ public class MobControl : EnemyControl
         xCenter = transform.position.x;
         yCenter = transform.position.y;
         Debug.Log("Start " + aimDirection);
+        idle.SetActive(true);
+        attack.SetActive(false);
         // fillCells();
     }
 
@@ -85,11 +91,15 @@ public class MobControl : EnemyControl
 
         if(state == (int) State.Chasing){ 
             ChasePlayer();
+            idle.SetActive(false);
+            attack.SetActive(true);
         } else if (state == (int) State.Return){
             transform.position = Vector2.MoveTowards(transform.position, firstPos.position, speed * Time.deltaTime);
             state = (int) State.Idle;
         } else {
             Move();
+            idle.SetActive(true);
+            attack.SetActive(false);
         }
 
     }
