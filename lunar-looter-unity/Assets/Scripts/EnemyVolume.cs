@@ -12,7 +12,7 @@ public class EnemyVolume : MonoBehaviour
     // Minimum distance player can hear enemy from
     private float minDist = 1;
     // Maximum distance player can hear enemy from
-    private float maxDist = 5;
+    private float maxDist = 20;
 
     // As player gets farther or closer to enemy, changes volume of enemy sfx
     void Update()
