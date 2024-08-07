@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 8959317115543577306}
   - component: {fileID: 8602225476405454359}
   - component: {fileID: 5258754418065900510}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Question
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ MonoBehaviour:
   rotateSpeed: 3
   fovPeriph: {fileID: 1646527875900617509}
   fov: {fileID: 2557754148269139831}
-  fovBack: {fileID: 3468281133866811416}
+  fovBack: {fileID: 0}
 --- !u!95 &4227610855388797100
 Animator:
   serializedVersion: 5

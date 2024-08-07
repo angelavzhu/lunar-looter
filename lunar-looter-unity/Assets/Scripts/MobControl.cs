@@ -42,6 +42,8 @@ public class MobControl : EnemyControl
 
     // direction enemy viewcones point towards
     private Vector2 aimDirection;
+    private float xCenter;
+    private float yCenter;
     
     //how fast the enemy rotates to see the player when noticed
     [SerializeField] private float rotateSpeed;
@@ -52,17 +54,23 @@ public class MobControl : EnemyControl
 
     void Start()
     {
-        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+        aimDirection = targetPos.position - transform.position;
         Player = GameObject.FindWithTag("Player").transform;
         chaseDuration = 0f;
         collide = false;
         state = (int) State.Idle;
+        xCenter = transform.position.x;
+        yCenter = transform.position.y;
+        Debug.Log("Start " + aimDirection);
         // fillCells();
     }
 
     // Updates direction of vision cones and vision cone origins and checks for collisions
     void LateUpdate()
     {
+        xCenter = transform.position.x;
+        yCenter = transform.position.y;
+        
         fovPeriph.SetAim(aimDirection);
         fovPeriph.SetOrigin(transform.position);
 
@@ -73,13 +81,15 @@ public class MobControl : EnemyControl
         fovBack.SetOrigin(transform.position);
         fovBack.Inverted();
 
+        Debug.Log("final: " + aimDirection);
+
         if(state == (int) State.Chasing){ 
             ChasePlayer();
         } else if (state == (int) State.Return){
             transform.position = Vector2.MoveTowards(transform.position, firstPos.position, speed * Time.deltaTime);
             state = (int) State.Idle;
         } else {
-            // Move();
+            Move();
         }
 
     }
@@ -95,13 +105,14 @@ public class MobControl : EnemyControl
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
-        
+        Debug.Log("Move " + aimDirection);
     }
 
     // Control what the enemy does when the player enters the enemy FOV
     public override void SeePlayer(Boolean see){
         if(see){
             //see the player
+            Debug.Log("chase");
             state = (int) State.Chasing;
         } else {
             //don't see the player
@@ -117,22 +128,20 @@ public class MobControl : EnemyControl
     /// </summary>
     /// <param name="see"></param> whether the player was noticed
     /// <param name="inverted"></param> whether the player was noticed from behind
-    /// <param name="pos"></param> the last position the player was noticed
+    /// <param name="pos"></param> the last position the player was noticed, scaled on world axis
      public override void NoticePlayer(Boolean see, Boolean inverted, Vector3 pos)
     {
-        if(see) {
-            if(state != (int) State.Chasing) {
-                state = (int) State.Notice;
-                if(!inverted) {
+        Vector3 newPos = new Vector3(pos.x - xCenter, pos.y - yCenter, pos.z);
+        if(state != (int) State.Chasing) {
+            if(see) {
+                
+                    state = (int) State.Notice;
                     // aimDirection = aimDirection + rotateSpeed * (Vector2) pos.normalized;
-                    aimDirection = Vector3.Lerp(transform.position, pos, rotateSpeed);
-                } else {
-                    // aimDirection = -(aimDirection + rotateSpeed * (Vector2) pos.normalized);
-                    aimDirection = Vector3.Lerp(transform.position, -pos, rotateSpeed);
-                }
+                    aimDirection = Vector3.Lerp(transform.position, newPos, rotateSpeed/10);
+            } else {
+                state = (int) State.Idle;
             }
-        } else {
-            state = (int) State.Idle;
+            Debug.Log("NoticePlayer " + aimDirection);
         }
     }
 
@@ -158,6 +167,7 @@ public class MobControl : EnemyControl
         //     aimDirection = path.Peek() - (Vector2)transform.position;
         //     Debug.Log(transform.position);
         // }
+        Debug.Log("ChasePlayer " + aimDirection);
     }
 
     // Handles when the player is out of the enemy FOV. The enemy will continue to chase the player
@@ -168,6 +178,7 @@ public class MobControl : EnemyControl
             state = (int) State.Return;
             chaseDuration = chaseDuration - chaseTime;
         }
+        Debug.Log("OutofRange " + aimDirection);
     }
 
      //Method to stop from moving when collide with something
@@ -179,7 +190,7 @@ public class MobControl : EnemyControl
             //don't freeze if collide with wall or other enemy
             collide = true;
         }
-
+        Debug.Log("Collidee " + aimDirection);
     }
 
     //Method to stop from moving when collide with something
@@ -197,63 +208,64 @@ public class MobControl : EnemyControl
         fov = null;
         fovBack = null;
     }
-
-    /** =======================================================
-        finding path
-        ========================================================*/
-
-    Vector2[,] cells = new Vector2 [100,100];
-    
-    private void fillCells() {
-        for (int i = 0; i < 100; i++) {
-            for(int j = 0; j < 100; j++){
-                cells[i,j] = new Vector2(i,j);
-            }
-        }
-    }
-    
-    private Stack<Vector2> GetPath(Vector2 end, Dictionary<Vector2, Vector2> reversePath){
-        Stack<Vector2> path = new Stack<Vector2>();
-        Vector2 current = end;
-        while(reversePath[current] != current) {
-            path.Push(current);
-            current = reversePath[current];
-        }
-        return path;
-    }
-
-    private Stack<Vector2> FindPath() {
-        Vector2 playerPos = Player.position;
-        Dictionary<Vector2,Vector2> path = new Dictionary<Vector2,Vector2>();
-        Queue<Vector2> frontier = new Queue<Vector2>();
-        int tileSize = 1;
-        // Debug.DrawLine(transform.position, Vector2.zero, Color.blue);
-        path.Add(new Vector2(transform.position.x, transform.position.y), new Vector2(transform.position.x, transform.position.y));
-        frontier.Enqueue(new Vector2(transform.position.x, transform.position.y));
-        
-        while(frontier.Count > 0){
-            Vector2 temp = frontier.Dequeue();
-            Vector2[] neighbors = {new Vector2(temp.x+tileSize, temp.y), new Vector2(temp.x-tileSize, temp.y), 
-            new Vector2(temp.x, temp.y+tileSize), new Vector2(temp.x, temp.y-tileSize)};
-            //must check if the neighbor is in bounds
-            foreach (Vector2 x in neighbors)
-            {
-                if(!path.ContainsKey(x)){
-                    if(Physics2D.OverlapPoint(x) == null){
-                        // Debug.Log("found plausible tile");
-                        // nothing on the point
-                        path[x] = temp;
-                        // Debug.Log("X-axis " + Mathf.Abs(x.x-playerPos.x) + " " + "Y-axis " + Mathf.Abs(x.y-playerPos.y));
-                        if(Mathf.Abs(x.x-playerPos.x) < tileSize && Mathf.Abs(x.y-playerPos.y) < tileSize) {
-                            Debug.Log("path found!");
-                            return GetPath(x, path);
-                        }
-                        // frontier.Enqueue(x);
-                    }
-                }
-            }
-        }
-        // Debug.Log("done looping");
-        return null;
-    }
 }
+
+//     /** =======================================================
+//         finding path
+//         ========================================================*/
+
+//     Vector2[,] cells = new Vector2 [100,100];
+    
+//     private void fillCells() {
+//         for (int i = 0; i < 100; i++) {
+//             for(int j = 0; j < 100; j++){
+//                 cells[i,j] = new Vector2(i,j);
+//             }
+//         }
+//     }
+    
+//     private Stack<Vector2> GetPath(Vector2 end, Dictionary<Vector2, Vector2> reversePath){
+//         Stack<Vector2> path = new Stack<Vector2>();
+//         Vector2 current = end;
+//         while(reversePath[current] != current) {
+//             path.Push(current);
+//             current = reversePath[current];
+//         }
+//         return path;
+//     }
+
+//     private Stack<Vector2> FindPath() {
+//         Vector2 playerPos = Player.position;
+//         Dictionary<Vector2,Vector2> path = new Dictionary<Vector2,Vector2>();
+//         Queue<Vector2> frontier = new Queue<Vector2>();
+//         int tileSize = 1;
+//         // Debug.DrawLine(transform.position, Vector2.zero, Color.blue);
+//         path.Add(new Vector2(transform.position.x, transform.position.y), new Vector2(transform.position.x, transform.position.y));
+//         frontier.Enqueue(new Vector2(transform.position.x, transform.position.y));
+        
+//         while(frontier.Count > 0){
+//             Vector2 temp = frontier.Dequeue();
+//             Vector2[] neighbors = {new Vector2(temp.x+tileSize, temp.y), new Vector2(temp.x-tileSize, temp.y), 
+//             new Vector2(temp.x, temp.y+tileSize), new Vector2(temp.x, temp.y-tileSize)};
+//             //must check if the neighbor is in bounds
+//             foreach (Vector2 x in neighbors)
+//             {
+//                 if(!path.ContainsKey(x)){
+//                     if(Physics2D.OverlapPoint(x) == null){
+//                         // Debug.Log("found plausible tile");
+//                         // nothing on the point
+//                         path[x] = temp;
+//                         // Debug.Log("X-axis " + Mathf.Abs(x.x-playerPos.x) + " " + "Y-axis " + Mathf.Abs(x.y-playerPos.y));
+//                         if(Mathf.Abs(x.x-playerPos.x) < tileSize && Mathf.Abs(x.y-playerPos.y) < tileSize) {
+//                             Debug.Log("path found!");
+//                             return GetPath(x, path);
+//                         }
+//                         // frontier.Enqueue(x);
+//                     }
+//                 }
+//             }
+//         }
+//         // Debug.Log("done looping");
+//         return null;
+//     }
+// }

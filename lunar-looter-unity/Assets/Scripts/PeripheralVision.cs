@@ -17,6 +17,7 @@ public class PeripheralVision : MonoBehaviour
     // the location of the player as seen in peripheral
     private Vector3 playerLoc;
 
+    // whether the fov is for the back of the enemy
     private Boolean back;
 
     // angle of the sightcone for the enemy (wider/narrower sight line)
@@ -47,7 +48,7 @@ public class PeripheralVision : MonoBehaviour
     void LateUpdate(){ 
         // peripheral FOV is invisible
         CreateFOV();
-        // GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
 
@@ -92,6 +93,7 @@ public class PeripheralVision : MonoBehaviour
                     //player enters vision
                     noticePlayer = true;
                     playerLoc = ray.point;
+                    Debug.Log("Playerloc: " + playerLoc);
                 } else {
                     // see a wall: stop sight cone at wall
                     vertex = ray.point;
@@ -125,8 +127,9 @@ public class PeripheralVision : MonoBehaviour
     }
 
     // Sets the angle for the FOV
-    public void SetAim(Vector2 direction){
+    public float SetAim(Vector2 direction){
         startingAngle = VectorToAngle(direction) + (fov / 2f);
+        return startingAngle;
     }
 
     // Sets FOV as inverted (true if yes)

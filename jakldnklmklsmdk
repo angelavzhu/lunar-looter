@@ -1,0 +1,467 @@
+[33mcommit 2c06e5a2d4f48386897b3399257aeedee3f6e6aa[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 259c72a 64309cb
+Author: phazrael <angelzhua@gmail.com>
+Date:   Sun Aug 4 11:41:42 2024 -0400
+
+    Merge branch 'main' of https://github.com/angelavzhu/lunar-looter
+
+[33mcommit 259c72a8a7a4cc45a272954a8f431571b8266d69[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Sun Aug 4 11:40:57 2024 -0400
+
+    peripheral fov
+
+[33mcommit 64309cb9fdc0494330990fea76a4f8621fd64948[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: ef26dfa 0df1331
+Author: closedcaptions13 <149892821+closedcaptions13@users.noreply.github.com>
+Date:   Sun Aug 4 11:40:33 2024 -0400
+
+    Merge pull request #22 from angelavzhu/level-test
+    
+    Audio + Level Test
+
+[33mcommit 0df133112f91be6ab550bfa0343869bf2b87c7cd[m[33m ([m[1;31morigin/level-test[m[33m)[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sun Aug 4 11:39:36 2024 -0400
+
+    Audio + Level Test
+    
+    - added audio
+    - made level test for non tutorial level
+
+[33mcommit ef26dfa49d7342882296c587aa8a0bd0b6706a81[m
+Merge: 4a96772 e5593d7
+Author: closedcaptions13 <149892821+closedcaptions13@users.noreply.github.com>
+Date:   Sun Jul 28 18:34:35 2024 -0400
+
+    Merge pull request #21 from angelavzhu/ui-and-settings
+    
+    UI and settings
+
+[33mcommit e5593d7ed6a6f17ae7539e82b86d328699f612d1[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sat Jul 27 21:58:55 2024 -0400
+
+    Settings+Loading
+    
+    - imported some audio
+    - implemented settings ui
+    - implemented loading screen
+
+[33mcommit 4a96772e795a21667082d550f475dd5dc1098c64[m[33m ([m[1;31morigin/enemy-movement[m[33m)[m
+Merge: e90246e 6be173b
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Wed Jul 24 15:41:45 2024 -0400
+
+    Merge pull request #20 from angelavzhu/enemy-ai
+    
+    Enemy ai
+
+[33mcommit 6be173bf7ecfb96c41c9d3561c6480fafcf1d79d[m[33m ([m[1;31morigin/enemy-ai[m[33m, [m[1;32menemy-ai[m[33m)[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Wed Jul 24 15:40:41 2024 -0400
+
+    fixed all sizes for enemies, temporary fix for movement
+
+[33mcommit 8e088bcfaf9c4a92da1c77def7f6cbc9b7b22a6e[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Wed Jul 24 15:16:37 2024 -0400
+
+    fixed thorn sight cone, started working on pathfinding
+
+[33mcommit e90246eb56c413d1a7b317b9098e72749ea39411[m
+Merge: 4607e42 7574bb4
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Mon Jul 22 16:24:54 2024 -0400
+
+    Merge pull request #19 from angelavzhu/enemy-ai
+    
+    added all enemy prefabs
+
+[33mcommit 7574bb46aba7ffba979806e7c67a22751d6a06f9[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon Jul 22 16:24:29 2024 -0400
+
+    added all enemy prefabs
+
+[33mcommit 4607e42857604caa34ced1bcabd4ac5ade75c9b8[m
+Merge: ef42ed7 67eb191
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Mon Jul 22 16:14:29 2024 -0400
+
+    Merge pull request #18 from angelavzhu/enemy-types
+    
+    Enemy types
+
+[33mcommit 67eb1915f70034a38005454539e319539b429f72[m[33m ([m[1;31morigin/enemy-types[m[33m, [m[1;32menemy-types[m[33m)[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon Jul 22 16:13:41 2024 -0400
+
+    completed merge
+
+[33mcommit 1733ed359c9efa521612eaebf6295dac853519d2[m
+Merge: 6647cb6 ef42ed7
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon Jul 22 16:07:35 2024 -0400
+
+    Merge branch 'main' into enemy-types
+
+[33mcommit 6647cb6881971f5afffa23a30e6096afe45ce577[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon Jul 22 15:55:58 2024 -0400
+
+    completed all enemy types, need to fix some sight cones
+
+[33mcommit ef42ed728a40745f68cff0f1cc67ff6fe8d30844[m
+Merge: 91e28c9 7662656
+Author: closedcaptions13 <149892821+closedcaptions13@users.noreply.github.com>
+Date:   Mon Jul 22 14:59:51 2024 -0400
+
+    Merge pull request #17 from angelavzhu/level-transition-and-ui
+    
+    Level transition and UI
+
+[33mcommit 766265604d32d08978ef1f749a1b46fa859ccaba[m
+Merge: 79550f6 91e28c9
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Mon Jul 22 14:52:02 2024 -0400
+
+    Merge branch 'main' into level-transition-and-ui
+
+[33mcommit f9a007bfced0e3e0a7a69627074f0fcdcfb796cc[m[33m ([m[1;31morigin/ui-and-settings[m[33m)[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Mon Jul 22 14:24:58 2024 -0400
+
+    first commit
+
+[33mcommit 79550f6a89704c2427003ad885de78f06e133e1d[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sun Jul 21 19:53:03 2024 -0400
+
+    tablet ui + implemented 2 levels
+    
+    - implemented first 2 levels (added wall collisions for tutorial level)
+    - fixed tablet ui and added words: imported pixel font (need to work on tablet button - tablet menu doesn't disappear when clicked again)
+    - added pixel perfect camera: fixed camera floatiness (feels more "snappy" now)
+    - has win screen and restart screen
+    - removed unlocking levels for now because of errors
+
+[33mcommit 91e28c9cbd0c9ff3a681f7345239f792028c8dff[m
+Merge: 5c8093c f7cd383
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Mon Jul 15 16:13:00 2024 -0400
+
+    Merge pull request #14 from angelavzhu/enemy-movement
+    
+    Enemy movement
+
+[33mcommit f7cd383180ae12747659e960974ce618b3bb2497[m[33m ([m[1;32menemy-movement[m[33m)[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon Jul 15 16:11:34 2024 -0400
+
+    hotfix for enemy collision, will work on later
+
+[33mcommit 1160e8c713bfe30b0127740829b3424ad0731844[m[33m ([m[1;31morigin/level-transition-and-ui[m[33m, [m[1;31morigin/level-loading[m[33m)[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Mon Jul 15 05:20:23 2024 -0400
+
+    Added restart screen
+    
+    - still buggy
+
+[33mcommit 07d61063d14cd2bebd2925ce99e6b86320fdfbc9[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Mon Jul 15 05:08:17 2024 -0400
+
+    Level Loading, UI for tablet
+    
+    - still has some bugs i needa fix
+
+[33mcommit d346e76f1828913fbad2605f47cde09a99b66e85[m
+Merge: a07ac33 5c8093c
+Author: phazrael <angelzhua@gmail.com>
+Date:   Wed Jul 10 20:49:11 2024 -0400
+
+    Merge branch 'enemy-movement' of https://github.com/angelavzhu/lunar-looter into enemy-movement
+    and make enemy follow player (incomplete)
+
+[33mcommit a07ac33ed4ac8d0a6eb98aa7f1779e859d614ed8[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Wed Jul 10 19:52:35 2024 -0400
+
+    merge conflict
+
+[33mcommit 5c8093c5aa3aba8ebcae19b00f14618875cc9bcb[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Wed Jul 10 17:02:09 2024 -0400
+
+    made player not collide with enemy, started progress on recognition
+
+[33mcommit fca424f14b4c57b07a38000f5b1a291d04edff42[m
+Merge: 74f7d4c 20c60ed
+Author: closedcaptions13 <149892821+closedcaptions13@users.noreply.github.com>
+Date:   Sun Jun 30 23:27:42 2024 -0400
+
+    Merge pull request #13 from angelavzhu/animations
+    
+    Animations + Tutorial Level Layout
+
+[33mcommit a88d007479e36dac75c37d4fea1833fcfba17ff6[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sat Jun 29 20:10:51 2024 -0400
+
+    made player into prefab (retry)
+
+[33mcommit 45d957c92f2b1913338b15031462c60d13dd1f2d[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sat Jun 29 20:06:29 2024 -0400
+
+    made player into prefab
+
+[33mcommit 20c60ed955561c0d27d88fa9c42431cfc6d228c5[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sat Jun 29 19:59:26 2024 -0400
+
+    made player into prefab
+
+[33mcommit ded39f4248472d21ddf8b9ce8ee23132728a6398[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sat Jun 29 19:56:49 2024 -0400
+
+    changed player fov view distance
+
+[33mcommit efcee5dd1deb6f03360dd02a8fe5f254b3040bbd[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Tue Jun 25 20:25:32 2024 -0400
+
+    Animations + Tutorial Layout
+    
+    - Implemented player animations
+    - Made enemy animation clips (still need to do 2 more enemies)
+    - Created layout for tutorial level
+    - Changed dark material to have texture
+
+[33mcommit ee2744b253da117fa3f4f250694c90f9a9eb1145[m[33m ([m[1;31morigin/player-lighting[m[33m, [m[1;32mplayer-lighting[m[33m)[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu Jun 20 20:33:30 2024 -0400
+
+    Made fov + darkness materials transparent
+    
+    Also changed player into sprite & added temporary test texture to the background
+
+[33mcommit f4cafb7df21baa36fd526cfabe88555becd5eec4[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon Jun 3 04:30:35 2024 -0400
+
+    fixing materials
+
+[33mcommit 74f7d4c2383f1fadd01ef9f3374ff096a1658e0e[m
+Merge: c07255d 1aa41e2
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Mon Jun 3 04:04:08 2024 -0400
+
+    Merge pull request #11 from angelavzhu/player-lighting
+    
+    made player fov render
+
+[33mcommit 1aa41e248a857821dae2a7ebb6c06a316fb3eb03[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon Jun 3 03:52:52 2024 -0400
+
+    made player fov render
+
+[33mcommit c07255d61c10f22474d55128d3a089db8809c8d7[m
+Merge: 0e0114e 8894cb9
+Author: closedcaptions13 <149892821+closedcaptions13@users.noreply.github.com>
+Date:   Mon Jun 3 00:00:31 2024 -0400
+
+    Merge pull request #10 from angelavzhu/new-enemy-fov
+    
+    changed so player won't move enemy
+
+[33mcommit 8894cb9e6095e9a33a33827aaee04e68f946f52a[m[33m ([m[1;31morigin/new-enemy-fov[m[33m)[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sun Jun 2 23:57:15 2024 -0400
+
+    changed so player won't move enemy
+
+[33mcommit 0e0114e2f39acf5acda1b506fc4bd5cb27e7ccfb[m
+Merge: 7b13c29 b74f0fe
+Author: closedcaptions13 <149892821+closedcaptions13@users.noreply.github.com>
+Date:   Sun Jun 2 23:16:45 2024 -0400
+
+    Merge pull request #9 from angelavzhu/new-enemy-fov
+    
+    Implemented new enemy fov + camera following player
+
+[33mcommit b74f0fe128dba0b9817f32b7c946352b4a4a1784[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sun Jun 2 23:13:57 2024 -0400
+
+    changed aimDirection input method
+
+[33mcommit 2b721d7903847ae02f79be2a7320eaac68b47885[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Sun Jun 2 23:07:35 2024 -0400
+
+    Changed enemy fov to be like player fov + camera follow player
+
+[33mcommit 7b13c29487ece2f0d9ef9c696144fec304e71ca4[m
+Merge: 5e14cf4 b01eb0e
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Mon May 27 23:48:18 2024 -0400
+
+    Merge pull request #7 from angelavzhu/merge
+    
+    Merge
+
+[33mcommit b01eb0eedefac728e6749643c4303953827b11fb[m[33m ([m[1;31morigin/merge[m[33m, [m[1;32mmerge[m[33m)[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon May 27 23:46:48 2024 -0400
+
+    merged all changes
+
+[33mcommit 1ff7c8125ecd43b81f1b183964f319952dd979fc[m
+Merge: d72795a 9bfb1bd
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon May 27 23:30:14 2024 -0400
+
+    Merge remote-tracking branch 'origin/enemy-vision-cones' into merge
+
+[33mcommit d72795a5e640fad94c41de9cf831ede42ee767eb[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon May 27 23:27:17 2024 -0400
+
+    deleted walls
+
+[33mcommit 7cdaeb55e6a69b6a470ad34f0eb5f79222321183[m[33m ([m[1;32mfield-of-view[m[33m)[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon May 27 23:21:27 2024 -0400
+
+    added FOV for player
+
+[33mcommit 9bfb1bd2836275d64063a1bac78f8c28d8542172[m[33m ([m[1;31morigin/enemy-vision-cones[m[33m, [m[1;32mmerging[m[33m)[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Mon May 27 06:13:24 2024 -0400
+
+    Implemented enemy vision cones
+    
+    Added light system (URP), added both inner and outer vision cones that can detect player
+    
+    (need to do some debugging later)
+
+[33mcommit 5e14cf4e068b226577fe614738393d76988dc934[m[33m ([m[1;31morigin/merging[m[33m, [m[1;31morigin/field-of-view[m[33m)[m
+Merge: 9290378 7a8d0ba
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Sat May 25 18:22:14 2024 -0400
+
+    Merge pull request #5 from angelavzhu/enemy-movement
+    
+    Enemy movement
+
+[33mcommit 7a8d0bae5dc4494849926be48f5ed1af80d6becd[m
+Merge: 47ac1b9 9290378
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Sat May 25 18:22:04 2024 -0400
+
+    Merge branch 'main' into enemy-movement
+
+[33mcommit 47ac1b9bccc8beb625bc5d0c16c4444b9913fe38[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Thu May 23 13:05:04 2024 -0400
+
+    Moved character script into scripts
+
+[33mcommit e391bb28f15a301e1a90af2b6e6290e2b8b7df64[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu May 23 13:00:31 2024 -0400
+
+    Added kill enemy mechanic
+
+[33mcommit fdcbb5c428569b758fbeeb7bc6efdb39c7e0299a[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu May 23 11:52:39 2024 -0400
+
+    made changes to enemy movement code
+
+[33mcommit aab75258d155a535dd91867daaf8484861b5abfb[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu May 23 11:43:24 2024 -0400
+
+    added script for enemymovement
+
+[33mcommit 929037871904b8035fbc588ebb2dec5d100ac8a6[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Thu May 23 11:31:33 2024 -0400
+
+    add unity save files
+
+[33mcommit 0385c58b64766b228624d30f8673a4d23234b05f[m
+Merge: fc8bf1b 7209561
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu May 23 11:25:56 2024 -0400
+
+    Merge branch 'enemy-movement' of https://github.com/angelavzhu/lunar-looter into enemy-movement
+
+[33mcommit fc8bf1b9e93d4f3883f82727082d2961b9b09e5c[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu May 23 11:23:46 2024 -0400
+
+    added scripts for enemy
+
+[33mcommit 7209561a4b83d2c7667e382a6dd2d75f7db02a48[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Thu May 23 11:03:34 2024 -0400
+
+    made player controllable
+
+[33mcommit b6304f8c289c216489e19f1909c09272a5d40a1e[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu May 23 10:34:56 2024 -0400
+
+    Aad test print
+
+[33mcommit edcff3ce4c13ed0c41367fecc2fb641c38247729[m
+Author: closedcaptions13 <closedcaptions13@gmail.com>
+Date:   Thu May 23 10:14:09 2024 -0400
+
+    added ball that falls (test)
+
+[33mcommit 57c70336232caa07f7898a390f01ca725800c0ba[m
+Merge: e2b8f88 2d9873d
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Wed May 22 20:35:04 2024 -0400
+
+    Merge pull request #1 from angelavzhu/add-unity-files
+    
+    added all unity files
+
+[33mcommit 2d9873deaaf31450854eca9aa837a2e4c1b810b9[m[33m ([m[1;31morigin/add-unity-files[m[33m, [m[1;32madd-unity-files[m[33m)[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Wed May 22 20:33:44 2024 -0400
+
+    added all unity files
+
+[33mcommit e2b8f889976591f2ec38c44c9249801c0cbcedb2[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Wed May 22 19:56:48 2024 -0400
+
+    .gitignore is now working
+
+[33mcommit 6e4602d20fa1b1516aa3880b299ccd788859f0b8[m
+Author: phazrael <angelzhua@gmail.com>
+Date:   Mon May 20 20:31:41 2024 -0400
+
+    added files
+
+[33mcommit a9b747befabea3ce3b0034ad69636da21cf2a5ea[m
+Author: Claire Chen <closedcaptions13@gmail.com>
+Date:   Mon May 20 20:23:42 2024 -0400
+
+    test file
+
+[33mcommit eb892162a04cd609300f3ce637e0c671263c951c[m
+Author: Angela Z <87206794+angelavzhu@users.noreply.github.com>
+Date:   Mon May 20 20:11:04 2024 -0400
+
+    Create test
