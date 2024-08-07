@@ -52,7 +52,7 @@ public class MobControl : EnemyControl
 
     void Start()
     {
-        aimDirection = targetPos.position - transform.position;
+        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
         Player = GameObject.FindWithTag("Player").transform;
         chaseDuration = 0f;
         collide = false;
@@ -63,24 +63,23 @@ public class MobControl : EnemyControl
     // Updates direction of vision cones and vision cone origins and checks for collisions
     void LateUpdate()
     {
-        fovPeriph.SetAim(aimDirection, "periph");
+        fovPeriph.SetAim(aimDirection);
         fovPeriph.SetOrigin(transform.position);
 
         fov.SetAim(aimDirection);
         fov.SetOrigin(transform.position);
 
-        fovBack.SetAim(-aimDirection, "back");
+        fovBack.SetAim(-aimDirection);
         fovBack.SetOrigin(transform.position);
-        // fovBack.Inverted();
+        fovBack.Inverted();
 
         if(state == (int) State.Chasing){ 
             ChasePlayer();
         } else if (state == (int) State.Return){
             transform.position = Vector2.MoveTowards(transform.position, firstPos.position, speed * Time.deltaTime);
             state = (int) State.Idle;
-        } else if (state != (int) State.Notice) {
-            // Move();
         } else {
+            // Move();
         }
 
     }
@@ -96,6 +95,7 @@ public class MobControl : EnemyControl
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+        
     }
 
     // Control what the enemy does when the player enters the enemy FOV
@@ -111,12 +111,25 @@ public class MobControl : EnemyControl
         }
     }
 
-     public override void NoticePlayer(Boolean see, Vector3 pos)
+    /// <summary>
+    /// Handles whether the player is noticed but not fully seen by the enemy.
+    /// If seen, slowly turns towards the last position that the player was noticed.
+    /// </summary>
+    /// <param name="see"></param> whether the player was noticed
+    /// <param name="inverted"></param> whether the player was noticed from behind
+    /// <param name="pos"></param> the last position the player was noticed
+     public override void NoticePlayer(Boolean see, Boolean inverted, Vector3 pos)
     {
         if(see) {
             if(state != (int) State.Chasing) {
                 state = (int) State.Notice;
-                aimDirection = Vector3.Slerp(transform.position, pos, rotateSpeed);
+                if(!inverted) {
+                    // aimDirection = aimDirection + rotateSpeed * (Vector2) pos.normalized;
+                    aimDirection = Vector3.Lerp(transform.position, pos, rotateSpeed);
+                } else {
+                    // aimDirection = -(aimDirection + rotateSpeed * (Vector2) pos.normalized);
+                    aimDirection = Vector3.Lerp(transform.position, -pos, rotateSpeed);
+                }
             }
         } else {
             state = (int) State.Idle;

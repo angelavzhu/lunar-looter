@@ -110,11 +110,7 @@ public class PeripheralVision : MonoBehaviour
         }
 
         //process whether enemy saw the player
-        // if(back) {
-        //     enemy.NoticePlayer(noticePlayer, -playerLoc);
-        // } else {
-            enemy.NoticePlayer(noticePlayer, playerLoc);
-        // }
+        enemy.NoticePlayer(noticePlayer, back, playerLoc);
 
 
         mesh.vertices = vertices;
@@ -129,9 +125,8 @@ public class PeripheralVision : MonoBehaviour
     }
 
     // Sets the angle for the FOV
-    public void SetAim(Vector2 direction, string s){
+    public void SetAim(Vector2 direction){
         startingAngle = VectorToAngle(direction) + (fov / 2f);
-        Debug.Log(s + "angle " + startingAngle);
     }
 
     // Sets FOV as inverted (true if yes)

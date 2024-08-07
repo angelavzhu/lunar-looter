@@ -29,7 +29,6 @@ public class Question : MonoBehaviour
         if(enemy.Noticed() == true) {
             transform.position = enemy.transform.position + new Vector3(0, height, 0);
             render.enabled = true;
-            Debug.Log("notice");
         } else {
             render.enabled = false;
         }
