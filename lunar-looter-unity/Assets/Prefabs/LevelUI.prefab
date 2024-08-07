@@ -525,8 +525,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.8
-  m_Text: Thorn Workers - Don't be fooled by their small size! They are deadly fast
-    and pack together
+  m_Text: 'Thorn Workers: Don''t be fooled by their small size! They are deadly fast
+    and pack together'
 --- !u!1 &527707723634351896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,8 +1298,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -131, y: 77}
-  m_SizeDelta: {x: 238.55, y: 30}
+  m_AnchoredPosition: {x: -125.91633, y: 96.67159}
+  m_SizeDelta: {x: 228.3708, y: 69.3889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1910685319545120018
 CanvasRenderer:
@@ -1342,8 +1342,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.8
-  m_Text: '3rd Objective: The fire you collect is too hot so this SS crystal will
-    be shaped '
+  m_Text: '     3rd Objective: The fire you collect is too hot so this SS crystal
+    will be shaped into a tank'
 --- !u!1 &1391011753111083608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,7 +1731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38, y: -241}
+  m_AnchoredPosition: {x: 38, y: -261}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2799503565246824849
