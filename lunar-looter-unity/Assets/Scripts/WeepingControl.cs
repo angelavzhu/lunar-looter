@@ -41,6 +41,10 @@ public class WeepingControl : EnemyControl
 
     [SerializeField] private PlayerControl player;
 
+    // Audiosources
+    [SerializeField] private GameObject idle;
+    [SerializeField] private GameObject attack;
+
     void Start()
     {
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
@@ -48,6 +52,8 @@ public class WeepingControl : EnemyControl
         playerTransform = GameObject.FindWithTag("Player").transform;
         chaseDuration = 0f;
         collide = false;
+        idle.SetActive(true);
+        attack.SetActive(false);
     }
 
     // Updates direction of vision cones and vision cone origins and checks for collisions
@@ -58,8 +64,12 @@ public class WeepingControl : EnemyControl
 
         if(isChasing && !collide){ 
             ChasePlayer();
+            idle.SetActive(false);
+            attack.SetActive(true);
         } else if (!collide){
             Move();
+            idle.SetActive(true);
+            attack.SetActive(false);
         }
 
     }

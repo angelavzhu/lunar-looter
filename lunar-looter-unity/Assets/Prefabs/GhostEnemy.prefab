@@ -45,7 +45,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 304a885b728e4ba4c81d3b3fc5fb15c0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.36
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 6056356816696772312}
   - component: {fileID: 2490003748291509633}
   - component: {fileID: 6553167778633307679}
+  - component: {fileID: 8608308009998246550}
   m_Layer: 0
   m_Name: GhostEnemy
   m_TagString: Enemy
@@ -159,7 +160,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.01, y: -2.01, z: 0}
-  m_LocalScale: {x: 0.08886114, y: 0.08886114, z: 0.08886114}
+  m_LocalScale: {x: 0.1279633, y: 0.1279633, z: 0.1279633}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 910881772835366814}
@@ -302,6 +303,8 @@ MonoBehaviour:
   fovPeriph: {fileID: 0}
   fov: {fileID: 0}
   fovBack: {fileID: 0}
+  idle: {fileID: 1579080740182184202}
+  attack: {fileID: 5053576901650233622}
 --- !u!95 &6553167778633307679
 Animator:
   serializedVersion: 5
@@ -323,6 +326,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8608308009998246550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996558159448115055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d039397abecf394bbe1c685b68af6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenerTransform: {fileID: 0}
+  idle: {fileID: 3727188587885958457}
+  attack: {fileID: 5792904312867596116}
 --- !u!1 &5053576901650233622
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,8 +496,8 @@ Transform:
   m_GameObject: {fileID: 6050334726285160711}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 17.958149, z: 0}
-  m_LocalScale: {x: 11.253512, y: 11.253512, z: 11.253512}
+  m_LocalPosition: {x: -0.8, y: 13.9, z: 0}
+  m_LocalScale: {x: 6.9852667, y: 6.9852667, z: 6.9852667}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2886807892488527955}
