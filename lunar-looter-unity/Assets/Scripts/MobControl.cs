@@ -48,7 +48,7 @@ public class MobControl : EnemyControl
 
     [SerializeField] private PeripheralVision fovPeriph;
     [SerializeField] private EnemyFOV fov;
-    [SerializeField] private EnemyFOV fovBack;
+    [SerializeField] private PeripheralVision fovBack;
 
     void Start()
     {
@@ -113,6 +113,7 @@ public class MobControl : EnemyControl
      public override void NoticePlayer(Boolean see, Vector3 pos)
     {
         if(see) {
+            Debug.Log("noticed player");
             if(state != (int) State.Chasing) {
                 state = (int) State.Notice;
                 aimDirection = aimDirection + rotateSpeed * (Vector2) pos.normalized;
