@@ -17,6 +17,9 @@ public class PeripheralVision : MonoBehaviour
     // the location of the player as seen in peripheral
     private Vector3 playerLoc;
 
+    // whether the fov is for the back of the enemy
+    private Boolean back;
+
     // angle of the sightcone for the enemy (wider/narrower sight line)
     [SerializeField] private float fov;
     
@@ -34,7 +37,7 @@ public class PeripheralVision : MonoBehaviour
     void Start()
     {
         mesh = new Mesh();
-        
+        back = false;
         //origin of sight cone
         origin = Vector3.zero;
 
@@ -54,14 +57,14 @@ public class PeripheralVision : MonoBehaviour
         //number of rays for raycasting
         int rayCount = 50;
 
-        // turning angle: starts at 0 and goes down
+        // turning angle: starts at starting angle and goes down
         float angle = startingAngle;
 
         //how much the angle changes as you turn
         float angleIncrease = fov/rayCount;
 
-        //start at origin (1 vertex) + rayCount rays
-        // num rays dont count 0 so have to add 1 for 0 ray (+2 total)
+        //start at origin (1 vertex) + rayCount rays,
+        //then num rays dont count 0 so have to add 1 for 0 ray (+2 total)
         Vector3[] vertices = new Vector3[rayCount + 2];
 
         int[] triangles = new int[rayCount * 3];
@@ -90,6 +93,7 @@ public class PeripheralVision : MonoBehaviour
                     //player enters vision
                     noticePlayer = true;
                     playerLoc = ray.point;
+                    Debug.Log("Playerloc: " + playerLoc);
                 } else {
                     // see a wall: stop sight cone at wall
                     vertex = ray.point;
@@ -108,7 +112,7 @@ public class PeripheralVision : MonoBehaviour
         }
 
         //process whether enemy saw the player
-        enemy.NoticePlayer(noticePlayer, playerLoc);
+        enemy.NoticePlayer(noticePlayer, back, playerLoc);
 
 
         mesh.vertices = vertices;
@@ -123,8 +127,14 @@ public class PeripheralVision : MonoBehaviour
     }
 
     // Sets the angle for the FOV
-    public void SetAim(Vector2 direction){
+    public float SetAim(Vector2 direction){
         startingAngle = VectorToAngle(direction) + (fov / 2f);
+        return startingAngle;
+    }
+
+    // Sets FOV as inverted (true if yes)
+    public void Inverted() {
+        back = true;
     }
 
     // Converts an angle to a Vector3

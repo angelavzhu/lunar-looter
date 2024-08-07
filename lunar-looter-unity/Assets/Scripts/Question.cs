@@ -27,7 +27,6 @@ public class Question : MonoBehaviour
     void Update()
     {
         if(enemy.Noticed() == true) {
-            Debug.Log("question rendered");
             transform.position = enemy.transform.position + new Vector3(0, height, 0);
             render.enabled = true;
         } else {
