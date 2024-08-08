@@ -112,7 +112,7 @@ public class PeripheralVision : MonoBehaviour
         }
 
         //process whether enemy saw the player
-        enemy.NoticePlayer(noticePlayer, back, playerLoc);
+        enemy.NoticePlayer(noticePlayer, playerLoc);
 
 
         mesh.vertices = vertices;
