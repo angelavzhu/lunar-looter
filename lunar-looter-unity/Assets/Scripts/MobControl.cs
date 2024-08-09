@@ -50,7 +50,7 @@ public class MobControl : EnemyControl
 
     [SerializeField] private PeripheralVision fovPeriph;
     [SerializeField] private EnemyFOV fov;
-    [SerializeField] private PeripheralVision fovBack;
+    [SerializeField] private EnemyFOV fovBack;
 
     // Audiosources
     [SerializeField] private GameObject idle;

@@ -531,7 +531,7 @@ MonoBehaviour:
   targetPos: {fileID: 3677449354622938475}
   speed: 4
   rotateSpeed: 3
-  fovPeriph: {fileID: 1646527875900617509}
+  fovPeriph: {fileID: 1053446818683855007}
   fov: {fileID: 2557754148269139831}
   fovBack: {fileID: 0}
   idle: {fileID: 8480558896133038009}
@@ -569,7 +569,6 @@ GameObject:
   - component: {fileID: 6841539779356931649}
   - component: {fileID: 7597100482085665149}
   - component: {fileID: 1053446818683855007}
-  - component: {fileID: 1646527875900617509}
   m_Layer: 2
   m_Name: EnemyFOVPeriph
   m_TagString: Untagged
@@ -654,25 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b42d0655e3d164c87cc8f85d1734bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fov: 120
-  viewDistance: 3.5
-  layermask:
-    serializedVersion: 2
-    m_Bits: 136
-  enemy: {fileID: 4815684750649848626}
---- !u!114 &1646527875900617509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7075211448628814813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b42d0655e3d164c87cc8f85d1734bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fov: 90
+  fov: 160
   viewDistance: 3.5
   layermask:
     serializedVersion: 2
