@@ -534,8 +534,8 @@ MonoBehaviour:
   fovPeriph: {fileID: 1053446818683855007}
   fov: {fileID: 2557754148269139831}
   fovBack: {fileID: 3468281133866811416}
-  idle: {fileID: 0}
-  attack: {fileID: 0}
+  idle: {fileID: 8480558896133038009}
+  attack: {fileID: 2772831545726777253}
 --- !u!95 &4227610855388797100
 Animator:
   serializedVersion: 5
