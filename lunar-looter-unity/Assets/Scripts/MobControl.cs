@@ -65,7 +65,6 @@ public class MobControl : EnemyControl
         state = (int) State.Idle;
         xCenter = transform.position.x;
         yCenter = transform.position.y;
-        Debug.Log("Start " + aimDirection);
         idle.SetActive(true);
         attack.SetActive(false);
         // fillCells();
@@ -85,7 +84,6 @@ public class MobControl : EnemyControl
 
         fovBack.SetAim(-aimDirection);
         fovBack.SetOrigin(transform.position);
-        fovBack.Inverted();
 
         Debug.Log("final: " + aimDirection);
 
@@ -137,9 +135,8 @@ public class MobControl : EnemyControl
     /// If seen, slowly turns towards the last position that the player was noticed.
     /// </summary>
     /// <param name="see"></param> whether the player was noticed
-    /// <param name="inverted"></param> whether the player was noticed from behind
     /// <param name="pos"></param> the last position the player was noticed, scaled on world axis
-     public override void NoticePlayer(Boolean see, Boolean inverted, Vector3 pos)
+     public override void NoticePlayer(Boolean see, Vector3 pos)
     {
         Vector3 newPos = new Vector3(pos.x - xCenter, pos.y - yCenter, pos.z);
         if(state != (int) State.Chasing) {

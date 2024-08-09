@@ -257,8 +257,8 @@ Transform:
   m_GameObject: {fileID: 3723880492385075124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 15.3, z: 0}
-  m_LocalScale: {x: 9.582479, y: 9.582479, z: 9.582479}
+  m_LocalPosition: {x: -0.09, y: 17.958149, z: 0}
+  m_LocalScale: {x: 11.253512, y: 11.253512, z: 11.253512}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5209251385264254688}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 4815684750649848626}
   - component: {fileID: 4227610855388797100}
   m_Layer: 0
-  m_Name: GhostEnemy
+  m_Name: GhostEnemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,8 +390,8 @@ Transform:
   m_GameObject: {fileID: 5318490808809523676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.28, y: -22.939, z: -0.1446629}
-  m_LocalScale: {x: 0.10307892, y: 0.10307892, z: 0.10307892}
+  m_LocalPosition: {x: -13.28, y: -22.89, z: -0.1446629}
+  m_LocalScale: {x: 0.08886114, y: 0.08886114, z: 0.08886114}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7853962010928310573}
@@ -533,7 +533,7 @@ MonoBehaviour:
   rotateSpeed: 3
   fovPeriph: {fileID: 1053446818683855007}
   fov: {fileID: 2557754148269139831}
-  fovBack: {fileID: 0}
+  fovBack: {fileID: 3468281133866811416}
   idle: {fileID: 8480558896133038009}
   attack: {fileID: 2772831545726777253}
 --- !u!95 &4227610855388797100
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 8650099149731573215}
   - component: {fileID: 2557754148269139831}
   m_Layer: 2
-  m_Name: EnemyFOV
+  m_Name: EnemyFOV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
