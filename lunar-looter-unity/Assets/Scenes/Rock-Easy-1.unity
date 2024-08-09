@@ -370,7 +370,6 @@ PrefabInstance:
     - target: {fileID: 2490003748291509633, guid: 8b4752ec5a7039f4ca651d5d8360edfa, type: 3}
       propertyPath: fovBack
       value: 
-      objectReference: {fileID: 581396597}
     - target: {fileID: 2490003748291509633, guid: 8b4752ec5a7039f4ca651d5d8360edfa, type: 3}
       propertyPath: firstPos
       value: 
@@ -1077,17 +1076,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4b42d0655e3d164c87cc8f85d1734bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &581396597 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7897571121635082133, guid: bdf0376adbd2e6940a18415a2d80ab70, type: 3}
-  m_PrefabInstance: {fileID: 581396594}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9719233f46bb64b914742496ed9e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &581396598 stripped
