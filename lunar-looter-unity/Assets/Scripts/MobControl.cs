@@ -85,8 +85,6 @@ public class MobControl : EnemyControl
         fovBack.SetAim(-aimDirection);
         fovBack.SetOrigin(transform.position);
 
-        Debug.Log("final: " + aimDirection);
-
         if(state == (int) State.Chasing){ 
             ChasePlayer();
             idle.SetActive(false);
@@ -106,21 +104,19 @@ public class MobControl : EnemyControl
 // which point enemy moves towards.
     void Move(){
         if(Vector2.Distance(transform.position, firstPos.position) < 0.01f){
-            targetPos = secondPos;
+        targetPos = secondPos;
         }
         if(Vector2.Distance(transform.position, secondPos.position) < 0.01f){
             targetPos = firstPos;
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
         aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
-        Debug.Log("Move " + aimDirection);
     }
 
     // Control what the enemy does when the player enters the enemy FOV
     public override void SeePlayer(Boolean see){
         if(see){
             //see the player
-            Debug.Log("chase");
             state = (int) State.Chasing;
         } else {
             //don't see the player
@@ -148,7 +144,6 @@ public class MobControl : EnemyControl
             } else {
                 state = (int) State.Idle;
             }
-            Debug.Log("NoticePlayer " + aimDirection);
         }
     }
 
@@ -174,7 +169,6 @@ public class MobControl : EnemyControl
         //     aimDirection = path.Peek() - (Vector2)transform.position;
         //     Debug.Log(transform.position);
         // }
-        Debug.Log("ChasePlayer " + aimDirection);
     }
 
     // Handles when the player is out of the enemy FOV. The enemy will continue to chase the player
@@ -185,7 +179,6 @@ public class MobControl : EnemyControl
             state = (int) State.Return;
             chaseDuration = chaseDuration - chaseTime;
         }
-        Debug.Log("OutofRange " + aimDirection);
     }
 
      //Method to stop from moving when collide with something
@@ -197,7 +190,6 @@ public class MobControl : EnemyControl
             //don't freeze if collide with wall or other enemy
             collide = true;
         }
-        Debug.Log("Collidee " + aimDirection);
     }
 
     //Method to stop from moving when collide with something
