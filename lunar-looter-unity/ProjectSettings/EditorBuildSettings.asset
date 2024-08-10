@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OfficialTutorial.unity
     guid: 8c61634251a7436439bffbfedff7e12e
   - enabled: 0
-    path: Assets/Scenes/OfficialLevel1.unity
+    path: Assets/Scenes/Sand-Hard-1.unity
     guid: 7da4ed68b0280614cb3f1d2bfc876725
   - enabled: 1
-    path: Assets/Scenes/Rock-Easy-3.unity
+    path: Assets/Scenes/Rock-Easy-1.unity
     guid: e6636e10d8370d549aade7c9b53c7fdc
   m_configObjects: {}
