@@ -194,8 +194,8 @@ MonoBehaviour:
   fovPeriph: {fileID: 0}
   fov: {fileID: 0}
   fovBack: {fileID: 0}
-  idle: {fileID: 0}
-  attack: {fileID: 0}
+  idle: {fileID: 4373667548211111799}
+  attack: {fileID: 7304172010071203681}
 --- !u!1 &4373667548211111799
 GameObject:
   m_ObjectHideFlags: 0
