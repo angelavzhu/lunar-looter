@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 799362961}
   - component: {fileID: 799362962}
   - component: {fileID: 799362963}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerConfiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

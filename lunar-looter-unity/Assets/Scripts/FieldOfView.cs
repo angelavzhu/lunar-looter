@@ -71,14 +71,16 @@ public class FieldOfView : MonoBehaviour
             //instead of a set position, each vertex should be raycasted
             RaycastHit2D ray = Physics2D.Raycast(origin, AngleToVector(angle), viewDistance, layermask);
             Vector3 vertex;
-
-            if(ray.collider == null){
-                //nothing blocking the FOV
-                vertex = origin + AngleToVector(angle) * viewDistance;
-            } else {
-                //something blocking the FOV: set vertex to where it was blocked
-                vertex = ray.point;
-            }
+            
+            vertex = origin + AngleToVector(angle) * viewDistance;
+            
+            // if(ray.collider == null){
+            //     //nothing blocking the FOV
+            //     vertex = origin + AngleToVector(angle) * viewDistance;
+            // } else {
+            //     //something blocking the FOV: set vertex to where it was blocked
+            //     vertex = ray.point;
+            // }
             vertices[i] = vertex;
 
             if(i-1 > 0){
