@@ -152,7 +152,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 23
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 10
@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 3771336551066994795}
   - component: {fileID: 4815684750649848626}
   - component: {fileID: 4227610855388797100}
+  - component: {fileID: 6750345460288931367}
   m_Layer: 0
   m_Name: GhostEnemy1
   m_TagString: Enemy
@@ -557,6 +558,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6750345460288931367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5318490808809523676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d039397abecf394bbe1c685b68af6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenerTransform: {fileID: 0}
+  idle: {fileID: 6044772666339269514}
+  attack: {fileID: 3476353626828220903}
 --- !u!1 &7075211448628814813
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +895,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 23
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 10

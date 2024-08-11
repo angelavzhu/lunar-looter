@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 1170813707375469804}
   - component: {fileID: 1270137023369060979}
   - component: {fileID: 4695555021510674468}
-  - component: {fileID: 7653742772793693711}
+  - component: {fileID: 9213942973988013608}
+  - component: {fileID: 4558438678960252916}
   m_Layer: 0
   m_Name: ZSpiritEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -874418859
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 149117796, guid: 5e0ae9fcadc0b93459774a549d8da658, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,7 +99,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3966695676987097193}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -173,7 +174,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7653742772793693711
+--- !u!114 &9213942973988013608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966695676987097193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d039397abecf394bbe1c685b68af6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenerTransform: {fileID: 0}
+  idle: {fileID: 4466133532066992479}
+  attack: {fileID: 2835682720336184309}
+--- !u!114 &4558438678960252916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,6 +210,8 @@ MonoBehaviour:
   fovPeriph: {fileID: 0}
   fov: {fileID: 0}
   fovBack: {fileID: 0}
+  idle: {fileID: 4373667548211111799}
+  attack: {fileID: 7304172010071203681}
 --- !u!1 &4373667548211111799
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +262,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 25
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -365,15 +383,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4591749033625570349, guid: a72f5014e98fe034db80da66f8b29a80, type: 2}
-  m_audioClip: {fileID: 8300000, guid: abbeccfd4685b7a44af7a1b52ddfcf75, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fa6155ea9117ca3429f5035325f1637f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 2.02
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 23
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -461,7 +479,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4591749033625570349, guid: a72f5014e98fe034db80da66f8b29a80, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 00b17a92be4d32449863e6f43c02d514, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cfa96d91d8bb1146a404f888e94f047, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -469,7 +487,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 23
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
