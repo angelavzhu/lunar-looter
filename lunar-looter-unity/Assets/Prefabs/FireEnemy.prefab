@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  chaseTime: 2
+  chaseTime: 10
   awakeTime: 2
   fov: {fileID: 0}
   originalPos: {fileID: 0}
