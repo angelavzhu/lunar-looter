@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1170813707375469804}
   - component: {fileID: 1270137023369060979}
   - component: {fileID: 4695555021510674468}
-  - component: {fileID: 8535901302515875710}
   - component: {fileID: 9213942973988013608}
+  - component: {fileID: 4558438678960252916}
   m_Layer: 0
   m_Name: ZSpiritEnemy
   m_TagString: Enemy
@@ -174,29 +174,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8535901302515875710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3966695676987097193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06add5228dc9b04ca1ff6c55d6a39cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstPos: {fileID: 0}
-  secondPos: {fileID: 0}
-  chaseTime: 2
-  targetPos: {fileID: 0}
-  speed: 2
-  rotateSpeed: 0
-  fovPeriph: {fileID: 0}
-  fov: {fileID: 0}
-  fovBack: {fileID: 0}
-  idle: {fileID: 4373667548211111799}
-  attack: {fileID: 7304172010071203681}
 --- !u!114 &9213942973988013608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +189,29 @@ MonoBehaviour:
   listenerTransform: {fileID: 0}
   idle: {fileID: 4466133532066992479}
   attack: {fileID: 2835682720336184309}
+--- !u!114 &4558438678960252916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966695676987097193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2393d166ad2644147a14ba9ca4ef1607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPos: {fileID: 0}
+  secondPos: {fileID: 0}
+  chaseTime: 2
+  targetPos: {fileID: 0}
+  speed: 2
+  rotateSpeed: 0
+  fovPeriph: {fileID: 0}
+  fov: {fileID: 0}
+  fovBack: {fileID: 0}
+  idle: {fileID: 4373667548211111799}
+  attack: {fileID: 7304172010071203681}
 --- !u!1 &4373667548211111799
 GameObject:
   m_ObjectHideFlags: 0
