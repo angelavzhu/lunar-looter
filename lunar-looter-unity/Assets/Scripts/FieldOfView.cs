@@ -17,6 +17,9 @@ public class FieldOfView : MonoBehaviour
     // angle of the sightcone for the player (wider/narrower sight line)
     private float fov;
 
+    // whether the fov is on
+    private Boolean On;
+
     // layermask for all the objects which should block the FOV (walls)
     [SerializeField] private LayerMask layermask;
 
@@ -28,6 +31,7 @@ public class FieldOfView : MonoBehaviour
         fov = 80f;
         //origin of sight cone
         origin = Vector3.zero;
+        On = true;
 
         GetComponent<MeshFilter>().mesh = mesh;
     }
@@ -73,14 +77,6 @@ public class FieldOfView : MonoBehaviour
             Vector3 vertex;
             
             vertex = origin + AngleToVector(angle) * viewDistance;
-            
-            // if(ray.collider == null){
-            //     //nothing blocking the FOV
-            //     vertex = origin + AngleToVector(angle) * viewDistance;
-            // } else {
-            //     //something blocking the FOV: set vertex to where it was blocked
-            //     vertex = ray.point;
-            // }
             vertices[i] = vertex;
 
             if(i-1 > 0){
@@ -96,6 +92,16 @@ public class FieldOfView : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateBounds();        
+    }
+
+    public void Toggle() {
+        if(On) {
+            GetComponent<MeshRenderer>().enabled = false;
+            On = false;
+        } else {
+            GetComponent<MeshRenderer>().enabled = true;
+            On = true;
+        }
     }
 
     // Converts an angle to a Vector3
