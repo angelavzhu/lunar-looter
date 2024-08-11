@@ -100,5 +100,5 @@ MonoBehaviour:
   viewDistance: 3
   layermask:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 128
   enemy: {fileID: 0}

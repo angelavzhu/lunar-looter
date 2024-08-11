@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 4312313589867189743}
   - component: {fileID: 9099459606531824601}
   - component: {fileID: 8046342521500076307}
-  - component: {fileID: 1664036171006922684}
+  - component: {fileID: 6348849652556923609}
   m_Layer: 2
   m_Name: ZFOVPeriph
   m_TagString: Untagged
@@ -188,7 +188,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1664036171006922684
+--- !u!114 &6348849652556923609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,14 +197,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5597668161224910008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9719233f46bb64b914742496ed9e78, type: 3}
+  m_Script: {fileID: 11500000, guid: e4b42d0655e3d164c87cc8f85d1734bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fov: 80
-  viewDistance: 4
+  fov: 200
+  viewDistance: 3
   layermask:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 0
   enemy: {fileID: 0}
 --- !u!1 &5994380355613202305
 GameObject:
