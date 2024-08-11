@@ -11,10 +11,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sand-Tutorial.unity
     guid: 8c61634251a7436439bffbfedff7e12e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sand-Hard-1.unity
     guid: 7da4ed68b0280614cb3f1d2bfc876725
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Rock-Easy-1.unity
     guid: e6636e10d8370d549aade7c9b53c7fdc
+  - enabled: 0
+    path: Assets/Scenes/Test.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Forest-Hard-10.unity
+    guid: a1c2de198f7f1a245bf1e93d2fc82bdd
+  - enabled: 1
+    path: Assets/Scenes/Forest-Hard-12.unity
+    guid: a8a956b573c2e7c48b5e5797084124f7
   m_configObjects: {}
