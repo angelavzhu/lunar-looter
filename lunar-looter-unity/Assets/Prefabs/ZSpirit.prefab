@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: targetPos
       value: 
       objectReference: {fileID: 7474131939014024170}
+    - target: {fileID: 4558438678960252916, guid: aae50428b9cb71b438be75a26438df06, type: 3}
+      propertyPath: rotateSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7653742772793693711, guid: aae50428b9cb71b438be75a26438df06, type: 3}
       propertyPath: fov
       value: 
