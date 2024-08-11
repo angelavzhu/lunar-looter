@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: bd7e002008e72a1409a116ee743c7521
   - enabled: 0
-    path: Assets/Scenes/OfficialTutorial.unity
+    path: Assets/Scenes/Sand-Tutorial.unity
     guid: 8c61634251a7436439bffbfedff7e12e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Sand-Hard-1.unity
     guid: 7da4ed68b0280614cb3f1d2bfc876725
   - enabled: 1

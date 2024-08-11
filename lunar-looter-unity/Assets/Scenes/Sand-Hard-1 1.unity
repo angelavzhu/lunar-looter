@@ -1283,10 +1283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8892233887423247291, guid: 5109a49826593a149b054a30b499c72d, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 9135832923569436737, guid: 5109a49826593a149b054a30b499c72d, type: 3}
       propertyPath: Priority
       value: 23
