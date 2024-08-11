@@ -41,6 +41,7 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         Move();
+        LightToggle();
         Animate();
         SetAimDirection();
         fov.SetAim(aimDirection);
@@ -77,6 +78,13 @@ public class PlayerControl : MonoBehaviour
             body.velocity = new UnityEngine.Vector2(x,y);
             moving = true;
             footsteps.enabled = true;
+    }
+
+    // Whether the player has toggled the light
+    private void LightToggle() {
+        if(Input.GetMouseButtonUp(0)) {
+            fov.Toggle();
+        }
     }
 
     // Shows death/restart screen if player hits enemy
