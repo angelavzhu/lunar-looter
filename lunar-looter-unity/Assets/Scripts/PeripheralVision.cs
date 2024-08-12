@@ -93,7 +93,6 @@ public class PeripheralVision : MonoBehaviour
                     //player enters vision
                     noticePlayer = true;
                     playerLoc = ray.point;
-                    Debug.Log("Playerloc: " + playerLoc);
                 } else {
                     // see a wall: stop sight cone at wall
                     vertex = ray.point;
