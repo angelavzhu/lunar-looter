@@ -250,8 +250,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5049241, y: 0.76806504}
-  m_Size: {x: 12.526026, y: 20.615417}
+  m_Offset: {x: -0.5049238, y: 0.4454952}
+  m_Size: {x: 12.526026, y: 21.153038}
   m_Direction: 0
 --- !u!50 &6994982541194416794
 Rigidbody2D:
@@ -327,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4305991720917148471}
   - component: {fileID: 3807355444954664144}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

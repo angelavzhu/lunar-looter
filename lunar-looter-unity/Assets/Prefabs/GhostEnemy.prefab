@@ -511,8 +511,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23308319, y: -0.7108141}
-  m_Size: {x: 10.458146, y: 18.261147}
+  m_Offset: {x: -0.386898, y: -0.21861464}
+  m_Size: {x: 9.043085, y: 14.93886}
   m_Direction: 0
 --- !u!114 &4815684750649848626
 MonoBehaviour:
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPos: {fileID: 3677449354622938475}
   secondPos: {fileID: 4419510575027487431}
-  chaseTime: 4
+  chaseTime: 10
   targetPos: {fileID: 3677449354622938475}
   speed: 4
   rotateSpeed: 3

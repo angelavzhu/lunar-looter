@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7050933402367792266}
   - component: {fileID: 5969621308329469072}
   - component: {fileID: 4068889781812195314}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ice Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: -874418859
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d335e4eed538f24094a44e42c87f23a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af98d3a5e4046c24fb5a497c9250358f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 30, y: 30}
+  m_Size: {x: 40, y: 40}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

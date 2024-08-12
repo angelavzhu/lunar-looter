@@ -29,7 +29,6 @@ public class EnemyFieldOfView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("test");
         mesh = new Mesh();
         //origin of sight cone
         origin = Vector3.zero;

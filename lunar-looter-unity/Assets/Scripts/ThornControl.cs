@@ -1,10 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class ThornControl : EnemyControl
 {
@@ -46,7 +41,7 @@ public class ThornControl : EnemyControl
     // the amount of degrees the FOV rotates (0-90 degrees which is mirrored on the other side)
     [SerializeField] private float degrees;
 
-    // how fast the FOV rotates
+    // angle at which the fov changes per frame
     [SerializeField] private float rotateSpeed;
 
     // direction enemy viewcones point towards
@@ -57,7 +52,7 @@ public class ThornControl : EnemyControl
     
     [SerializeField] private EnemyFOV fov;
     [SerializeField] private EnemyFOV fovBack;
-    [SerializeField] private EnemyFOV fovPeriph;
+    [SerializeField] private PeripheralVision fovPeriph;
 
 
     void Start()

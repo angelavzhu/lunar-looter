@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7199642421220931845}
   - component: {fileID: 1615512367300606334}
   - component: {fileID: 9101039717554901370}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rocky Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: -874418859
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d643116477b1a584ea4ede880c0f802d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df77c656ebee2cb48afba4bd560b0c14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 30, y: 30}
+  m_Size: {x: 40, y: 40}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
