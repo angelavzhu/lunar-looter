@@ -196,7 +196,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.84375
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 530789253}
   - component: {fileID: 530789252}
   - component: {fileID: 530789251}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zero Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4454,6 +4454,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Level Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 4882406499957983057, guid: aef4280dcb4d0a04999036e17c62c62a, type: 3}
+      propertyPath: loadingScreen
+      value: 
+      objectReference: {fileID: 1452209673}
     - target: {fileID: 5688875298487095033, guid: aef4280dcb4d0a04999036e17c62c62a, type: 3}
       propertyPath: loadingScreen
       value: 
@@ -4489,6 +4493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RestartScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 3127288382829662563, guid: 138ef2281806c75499352e177de22022, type: 3}
+      propertyPath: loadingScreen
+      value: 
+      objectReference: {fileID: 1452209673}
     - target: {fileID: 8300255100727017602, guid: 138ef2281806c75499352e177de22022, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

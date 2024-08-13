@@ -317,7 +317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6490452929079847428
 Transform:
   m_ObjectHideFlags: 0
@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 3358327981568577230}
   - component: {fileID: 3926655424513734177}
   - component: {fileID: 1333268030375744661}
+  - component: {fileID: 7490383995049851510}
   m_Layer: 0
   m_Name: ThornEnemy
   m_TagString: Enemy
@@ -724,6 +725,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.2756636, y: -1.4846259}
   m_Size: {x: 9.214525, y: 16.471321}
   m_Direction: 0
+--- !u!114 &7490383995049851510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235095041448260718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d039397abecf394bbe1c685b68af6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listenerTransform: {fileID: 0}
+  idle: {fileID: 2136107476244405949}
+  attack: {fileID: 3296934190755338286}
 --- !u!1 &7536313715063328552
 GameObject:
   m_ObjectHideFlags: 0
