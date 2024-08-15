@@ -5,34 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: bd7e002008e72a1409a116ee743c7521
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/1-Sand-Tutorial.unity
     guid: 8c61634251a7436439bffbfedff7e12e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/2-Forest-Easy.unity
     guid: 986c0470712d7ac4c89bea342952b853
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/3-Rock-Easy.unity
     guid: e6636e10d8370d549aade7c9b53c7fdc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/4-Sand-Easy.unity
     guid: c1194380f1485b743933c8c2c187ec2e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/5-Ice-Medium.unity
     guid: 2d7f93bfeda2d7349ad94057bed41e5a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/6-Rock-Medium.unity
     guid: df948a0ce64f7ee4ebe88e4eae8c910e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/7-Ice-Medium.unity
     guid: 5d7c260f0438e87489174ee0adc47397
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/8-Sand-Medium.unity
     guid: 81ea4c4b433aed84098a2c0cb170cd55
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/9-Ice-Medium.unity
     guid: 9ca95897ca48cb142ac627d6a91779f7
   - enabled: 1

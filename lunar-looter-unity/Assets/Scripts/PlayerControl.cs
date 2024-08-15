@@ -91,9 +91,10 @@ public class PlayerControl : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Enemy")){
             restartScreen.SetActive(true);
-            body.gameObject.GetComponent<PlayerControl>().enabled = false;
-            body.velocity = new UnityEngine.Vector2(0,0);
+            // body.gameObject.GetComponent<PlayerControl>().enabled = false;
+            // body.velocity = new UnityEngine.Vector2(0,0);
             footsteps.enabled = false;
+            Time.timeScale = 0;
         }
     }
 
