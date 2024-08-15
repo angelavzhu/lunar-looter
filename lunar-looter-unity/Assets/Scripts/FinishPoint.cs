@@ -11,7 +11,9 @@ public class FinishPoint : MonoBehaviour
     // If player reaches finishing point, goes to the scene for the next level and unlocks that level
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("Player")) {
+            // win
             UnlockNewLevel();
+            Time.timeScale = 0;
             winScreen.SetActive(true);
             player.gameObject.GetComponent<PlayerControl>().enabled = false;
         }

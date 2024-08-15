@@ -250,6 +250,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 6909526933819390956}
+    - target: {fileID: 8286709693217125397, guid: 3b64dfdf973758d4d8dfb272887d8821, type: 3}
+      propertyPath: viewDistance
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
