@@ -3311,7 +3311,7 @@ MonoBehaviour:
       - m_Target: {fileID: 9017790757087520910}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetSfxVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7329,7 +7329,7 @@ MonoBehaviour:
       - m_Target: {fileID: 9017790757087520910}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetVolume
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7592,6 +7592,7 @@ MonoBehaviour:
   mainMixer: {fileID: 24100000, guid: a72f5014e98fe034db80da66f8b29a80, type: 2}
   masterControl: {fileID: 1158767083368176973}
   sfxControl: {fileID: 3340890028190820998}
+  brightnessControl: {fileID: 5949382653374219088}
 --- !u!1 &9083821296117513824
 GameObject:
   m_ObjectHideFlags: 0
