@@ -191,7 +191,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.84375
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1674,10 +1674,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1072359639950717489, guid: 606020fa9b7343145a852c20a527df82, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4399047733795534446, guid: 606020fa9b7343145a852c20a527df82, type: 3}
       propertyPath: listenerTransform
       value: 
       objectReference: {fileID: 8951821}
+    - target: {fileID: 6736391322849089944, guid: 606020fa9b7343145a852c20a527df82, type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8391427705016948150, guid: 606020fa9b7343145a852c20a527df82, type: 3}
       propertyPath: m_Name
       value: FireEnemy

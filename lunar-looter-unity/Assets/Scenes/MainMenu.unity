@@ -5298,6 +5298,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5822763996024910858, guid: 872f4760a7599474c8cccecd188d2f41, type: 3}
+      propertyPath: sfxMixer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6418244292960636922, guid: 872f4760a7599474c8cccecd188d2f41, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0

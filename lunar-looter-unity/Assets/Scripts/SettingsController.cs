@@ -9,6 +9,8 @@ public class SettingsController : MonoBehaviour
     public static SettingsController instance;
     // Game audio source
     [SerializeField] private AudioMixer mainMixer;
+    // Game sfx audio source
+    //[SerializeField] private AudioMixer sfxMixer;
     // Game master audio control
     [SerializeField] private Slider masterControl;
     // Game SFX audio control
@@ -56,6 +58,7 @@ public class SettingsController : MonoBehaviour
     // Sets SFX volume
     public void SetSfxVolume(float inputVolume){
         sfx = inputVolume;
+        //sfxMixer.SetFloat("SFX", Mathf.Log10(sfx)*20);
         mainMixer.SetFloat("SFX", Mathf.Log10(sfx)*20);
         PlayerPrefs.SetFloat("SFX", sfx);
         PlayerPrefs.Save();

@@ -35,4 +35,11 @@ public class EnemyVolume : MonoBehaviour
             attack.volume = 1 - ((dist - minDist) / (maxDist - minDist));
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.CompareTag("Player")){
+            attack.mute = true;
+            Debug.Log("collided");
+        }
+    }
 }

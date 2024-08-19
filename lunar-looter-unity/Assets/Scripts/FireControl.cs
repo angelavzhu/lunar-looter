@@ -41,6 +41,10 @@ public class FireControl : EnemyControl
     // Audio for enemy
     [SerializeField] private GameObject idle;
     [SerializeField] private GameObject attack;
+    [SerializeField] private AudioSource attackWail;
+
+    // Checks if enemy is chasing player
+    private bool isAttacking;
 
 
     // Start is called before the first frame update
@@ -53,6 +57,7 @@ public class FireControl : EnemyControl
         Player = GameObject.FindWithTag("Player").transform;
         idle.SetActive(true);
         attack.SetActive(false);
+        isAttacking = false;
     }
 
     // Update is called once per frame
@@ -102,6 +107,7 @@ public class FireControl : EnemyControl
             // enemy chase cools down, return to idle
             state = (int) State.Return;
             chaseDuration -= chaseTime;
+            isAttacking = false;
         }
     }
 
@@ -111,8 +117,17 @@ public class FireControl : EnemyControl
             transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
             idle.SetActive(false);
             attack.SetActive(true);
+            // Plays wailing sfx once only when enemy starts chasing player
+            if(!attackWail.isPlaying && !isAttacking){
+                attackWail.Play();
+                isAttacking = true;
+            }
+            
+            
         }
     }
+
+
     
     // protected override void OnCollisionEnter2D(Collision2D collision)
     // {
