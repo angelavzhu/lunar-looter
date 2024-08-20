@@ -12,6 +12,10 @@ public class PauseController : MonoBehaviour
         frozen = false;
     }
 
+    void Update(){
+        EscClicked();
+    }
+
     public void Clicked()
     {
         if(frozen) {
@@ -21,6 +25,17 @@ public class PauseController : MonoBehaviour
         }
     }
 
+    public void EscClicked(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(frozen){
+                ResumeScreen();
+            }
+            else{
+                FreezeScreen();
+            }
+        }
+    }
+    
     public void FreezeScreen() {
         Time.timeScale = 0;
         AudioListener.volume = 0;

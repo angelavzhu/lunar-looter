@@ -616,6 +616,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 552573042598259078, guid: 7c0ec90f2eff33748ab1973b672515ca, type: 3}
+      propertyPath: m_Text
+      value: Level 4
+      objectReference: {fileID: 0}
     - target: {fileID: 770925522368068004, guid: 7c0ec90f2eff33748ab1973b672515ca, type: 3}
       propertyPath: m_Name
       value: Canvas
