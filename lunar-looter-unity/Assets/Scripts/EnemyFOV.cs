@@ -45,8 +45,11 @@ public class EnemyFOV : MonoBehaviour
     //called every frame: AFTER player update is called
     void LateUpdate(){ 
         // NOTE: FOV is blocked by objects in the layer "walls", must change this in editor. 
-        if(FOVOn){
-            CreateFOV();
+        CreateFOV();
+        Debug.Log(enemy.GetType());
+        if(enemy.GetType() == typeof(WeepingControl)) { 
+            GetComponent<MeshRenderer>().enabled = false;
+        } else if(FOVOn){
             GetComponent<MeshRenderer>().enabled = true;
         } else {
             GetComponent<MeshRenderer>().enabled = false;

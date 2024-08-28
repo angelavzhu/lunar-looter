@@ -191,7 +191,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.84375
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -324,6 +324,127 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!1001 &41128628
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 94.4484
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 67.8724
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -115.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042112586047894962, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044067713184376749, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_Name
+      value: TextCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698927954249913362, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_Text
+      value: Fire enemies can see in all directions, but go to sleep occasionally
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200973694210091374, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 718.9305
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200973694210091374, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 268.9027
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200973694210091374, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -12.9888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200973694210091374, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.2487
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 712182160510216161, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+    - {fileID: 5085558883066630747, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+    - {fileID: 9160510109738518996, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+    - {fileID: 8209694081164219603, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ad8ad3a462b4b3428c1ab2f3c5c0b74, type: 3}
 --- !u!1 &169555109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,3 +1969,4 @@ SceneRoots:
   - {fileID: 1325406673}
   - {fileID: 452183305941855318}
   - {fileID: 2012619639}
+  - {fileID: 41128628}
