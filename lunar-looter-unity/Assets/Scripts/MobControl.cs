@@ -206,6 +206,8 @@ public class MobControl : EnemyControl
         fovPeriph = null;
         fov = null;
         fovBack = null;
+        attack = null;
+        idle = null;
     }
 }
 

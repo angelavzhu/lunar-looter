@@ -7,6 +7,9 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
 
+    // public void Start(){
+    //     AudioListener.volume = 1;
+    // }
     private void Awake(){
         if(instance == null){
             instance = this;

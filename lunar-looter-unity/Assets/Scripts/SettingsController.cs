@@ -9,10 +9,20 @@ public class SettingsController : MonoBehaviour
     public static SettingsController instance;
     // Game audio source
     [SerializeField] private AudioMixer mainMixer;
+    // Game sfx audio source
+    //[SerializeField] private AudioMixer sfxMixer;
     // Game master audio control
     [SerializeField] private Slider masterControl;
     // Game SFX audio control
     [SerializeField] private Slider sfxControl;
+    // Game brightness control
+    [SerializeField] private Slider brightnessControl;
+
+    // Data at very beginning of game
+    private float volume = 1f;
+    private float sfx = 1f;
+    private float brightness = 0.5f;
+    private int fullScreen = 1;
 
     private SpriteRenderer[] spriteRenderers;
 
@@ -20,61 +30,61 @@ public class SettingsController : MonoBehaviour
     public void Start(){
         spriteRenderers = FindObjectsOfType<SpriteRenderer>();
 
-        /*if(PlayerPrefs.HasKey("volume")){
-            LoadVolume();
-        }
-        else{
-            SetVolume();
-            SetSfxVolume();
-        }*/
-    }
+        volume = PlayerPrefs.GetFloat("volume", 1f);
+        sfx = PlayerPrefs.GetFloat("sfx", 1f);
+        brightness = PlayerPrefs.GetFloat("brightness", 0.5f);
+        fullScreen = PlayerPrefs.GetInt("fullscreen", 1);
 
-    private void Awake(){
-        if(instance == null){
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+        masterControl.value = volume;
+        sfxControl.value = sfx;
+        brightnessControl.value = brightness;
+
+        if(fullScreen == 0){
+            Screen.fullScreen = false;
         }
         else{
-            Destroy(gameObject);
+            Screen.fullScreen = true;
         }
     }
 
     // Sets game volume
-    public void SetVolume(){
-        float volume = masterControl.value;
+    public void SetVolume(float inputVolume){
+        volume = inputVolume;
         mainMixer.SetFloat("volume", Mathf.Log10(volume)*20);
-
-        //PlayerPrefs.SetFloat("volume", volume);
+        PlayerPrefs.SetFloat("volume", volume);
+        PlayerPrefs.Save();
     }
 
     // Sets SFX volume
-    public void SetSfxVolume(){
-        float volume = sfxControl.value;
-        mainMixer.SetFloat("SFX", Mathf.Log10(volume)*20);
-
-        //PlayerPrefs.SetFloat("SFX", volume);
+    public void SetSfxVolume(float inputVolume){
+        sfx = inputVolume;
+        //sfxMixer.SetFloat("SFX", Mathf.Log10(sfx)*20);
+        mainMixer.SetFloat("SFX", Mathf.Log10(sfx)*20);
+        PlayerPrefs.SetFloat("SFX", sfx);
+        PlayerPrefs.Save();
     }
-
-    // Loads saved volume
-    /*private void LoadVolume(){
-        masterControl.value = PlayerPrefs.GetFloat("Volume");
-        sfxControl.value = PlayerPrefs.GetFloat("SFX");
-
-        SetVolume();
-        SetSfxVolume();
-    }*/
 
     // Sets brightness
     public void AdjustBrightness(float BrightnessValue){
+        brightness = BrightnessValue;
         for(int i = 0; i < spriteRenderers.Length; i++){
-            spriteRenderers[i].color = new Color(BrightnessValue, BrightnessValue, BrightnessValue, spriteRenderers[i].color.a);
+            spriteRenderers[i].color = new Color(brightness, brightness, brightness, spriteRenderers[i].color.a);
         }
 
-        //PlayerPrefs.SetFloat("Brightness", BrightnessValue);
+        PlayerPrefs.SetFloat("Brightness", brightness);
+        PlayerPrefs.Save();
     }
 
     // Sets game to fullscreen
     public void SetFullScreen(bool isFullScreen){
-        Screen.fullScreen = isFullScreen;
+        if(isFullScreen){
+            fullScreen = 1;
+        }
+        else{
+            fullScreen = 0;
+        }
+
+        PlayerPrefs.SetInt("fullscreen", fullScreen);
+        PlayerPrefs.Save();
     }
 }

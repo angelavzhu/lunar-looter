@@ -28,6 +28,7 @@ public class SceneLoader : MonoBehaviour
     // Loads scene that matches the name inputted into parameter
     public void Load(int levelIndex) {
         StartCoroutine(LoadSceneAsynchronously(levelIndex));
+        //AudioListener.volume = 1;
     }
 
     IEnumerator LoadSceneAsynchronously(int levelIndex) {
@@ -41,5 +42,6 @@ public class SceneLoader : MonoBehaviour
 
     public void restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //AudioListener.volume = 1;
     }
 }
