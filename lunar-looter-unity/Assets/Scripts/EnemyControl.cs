@@ -14,7 +14,7 @@ using UnityEngine;
 
     // changes enemy state based on whether the player is noticed
     // Vector3 position the position of the player as last seen in the peripheral FOV
-    public virtual void NoticePlayer(Boolean see, Vector3 position){}
+    public virtual void NoticePlayer(Boolean see){}
 
     // whether the enemy has noticed the player
     public virtual Boolean Noticed(){ return false; }
