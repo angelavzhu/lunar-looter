@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -80,6 +81,7 @@ public class FireControl : EnemyControl
 
     public override void SeePlayer(bool see)
     {
+        Debug.Log(see);
         if(see){
             //see the player
             state = (int) State.Chasing;
@@ -126,21 +128,12 @@ public class FireControl : EnemyControl
             
         }
     }
-
-
-    
-    // protected override void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     Rigidbody2D rigid = GetComponent<Rigidbody2D>();
-    //     rigid.velocity = UnityEngine.Vector2.zero;
-    //     if(!(collision.gameObject.layer == 3 || collision.gameObject.tag == "Enemy")) {
-    //         //don't freeze if collide with wall or other enemy
-    //         collide = true;
-    //     }
-    // }
-
-    // protected override void OnCollisionExit2D(Collision2D collision)
-    // {
-    //     collide = false;
-    // }
+    public void Destroy(){
+       Player = null;
+       originalPos = null;
+       fov = null;
+       idle = null;
+       attackWail = null;
+       attack = null;
+    }
 }

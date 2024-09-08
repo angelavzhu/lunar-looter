@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ThornControl : EnemyControl
 {
-    //thorn: rotate
-
      // starting point enemy moves to
     public Transform firstPos;
 
@@ -87,23 +85,10 @@ public class ThornControl : EnemyControl
 
     }
 
-    //Method to stop from moving when collide with something
-    protected override void OnCollisionEnter2D(Collision2D collision)
-    {
-        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
-        rigid.velocity = UnityEngine.Vector2.zero;
-        collide = true;
-    }
-
-    //Method to stop from moving when collide with something
-    protected override void OnCollisionExit2D(Collision2D collision)
-    {
-        collide = false;
-    }
-
     // Enemy moves back and forth from one position to another and changes aim direction based on
     // which point enemy moves towards.
     void Move(){
+        Debug.Log("move");
         if(Vector2.Distance(transform.position, firstPos.position) < 0.01f){
             targetPos = secondPos;
             turning = true;

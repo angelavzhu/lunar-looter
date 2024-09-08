@@ -193,7 +193,6 @@ public class MobControl : EnemyControl
     protected void OutOfNotice(){
         noticeDuration += Time.deltaTime;
         if(noticeDuration > noticeTime) {
-            Debug.Log("stop notice");
             state = (int) State.Idle;
             noticeDuration -= noticeTime;
         }

@@ -38,7 +38,7 @@ public class PlayerControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Move();
         LightToggle();
