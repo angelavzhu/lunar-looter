@@ -42,13 +42,13 @@ public class PeripheralVision : MonoBehaviour
         origin = Vector3.zero;
 
         GetComponent<MeshFilter>().mesh = mesh;
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
     //called every frame: AFTER player update is called
     void LateUpdate(){ 
         // peripheral FOV is invisible
         CreateFOV();
-        GetComponent<MeshRenderer>().enabled = false;
     }
 
 
@@ -111,7 +111,7 @@ public class PeripheralVision : MonoBehaviour
         }
 
         //process whether enemy saw the player
-        enemy.NoticePlayer(noticePlayer, playerLoc);
+        enemy.NoticePlayer(noticePlayer);
 
 
         mesh.vertices = vertices;

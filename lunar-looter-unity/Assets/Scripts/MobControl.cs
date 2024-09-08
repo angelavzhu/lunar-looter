@@ -28,8 +28,13 @@ public class MobControl : EnemyControl
     // how long the enemy has been chasing the player after the player has left the view range
     private float chaseDuration;
 
+    // how long the enemy is in notice state
+    private float noticeDuration;
+
     // the max time the enemy should chase the player after leaving the view range
     [SerializeField] public float chaseTime;
+
+    private float noticeTime;
 
     // whether the enemy is colliding with anything
     private Boolean collide;
@@ -61,6 +66,8 @@ public class MobControl : EnemyControl
         aimDirection = targetPos.position - transform.position;
         Player = GameObject.FindWithTag("Player").transform;
         chaseDuration = 0f;
+        noticeDuration = 0f;
+        noticeTime = chaseTime / 2f;
         collide = false;
         state = (int) State.Idle;
         xCenter = transform.position.x;
@@ -97,7 +104,6 @@ public class MobControl : EnemyControl
             idle.SetActive(true);
             attack.SetActive(false);
         }
-
     }
 
 // Enemy moves back and forth from one position to another and changes aim direction based on
@@ -110,7 +116,9 @@ public class MobControl : EnemyControl
             targetPos = firstPos;
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
-        aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+        if(state != (int) State.Notice) {
+            aimDirection = new Vector2(targetPos.position.x - transform.position.x, targetPos.position.y - transform.position.y);
+        }
     }
 
     // Control what the enemy does when the player enters the enemy FOV
@@ -132,20 +140,18 @@ public class MobControl : EnemyControl
     /// </summary>
     /// <param name="see"></param> whether the player was noticed
     /// <param name="pos"></param> the last position the player was noticed, scaled on world axis
-     public override void NoticePlayer(Boolean see, Vector3 pos)
+     public override void NoticePlayer(Boolean see)
     {
-        Vector3 newPos = new Vector3(pos.x - xCenter, pos.y - yCenter, pos.z);
         if(state != (int) State.Chasing) {
             if(see) {
-                
                     state = (int) State.Notice;
-                    // aimDirection = aimDirection + rotateSpeed * (Vector2) pos.normalized;
-                    aimDirection = Vector3.Lerp(transform.position, newPos, rotateSpeed/10);
+                    aimDirection += rotateSpeed/100 * ((Vector2) (Player.position - transform.position).normalized);
             } else {
-                state = (int) State.Idle;
+                OutOfNotice();
             }
         }
     }
+    // odin
 
     public override bool Noticed()
     {
@@ -178,6 +184,17 @@ public class MobControl : EnemyControl
         if(chaseDuration > chaseTime) {
             state = (int) State.Return;
             chaseDuration = chaseDuration - chaseTime;
+        }
+    }
+
+
+    // Handles when the player is out of the enemy FOV. The enemy will continue to chase the player
+    // up to a certain time limit, then return to its original movement pattern.
+    protected void OutOfNotice(){
+        noticeDuration += Time.deltaTime;
+        if(noticeDuration > noticeTime) {
+            state = (int) State.Idle;
+            noticeDuration -= noticeTime;
         }
     }
 
